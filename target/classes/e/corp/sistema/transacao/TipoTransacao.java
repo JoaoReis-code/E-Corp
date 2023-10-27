@@ -1,7 +1,8 @@
 package e.corp.sistema.transacao;
 
 public enum TipoTransacao {
-    PIX,
+    PIXRECEBIDO,
+    PIXENVIADO,
     BOLETO,
     SAQUE,
     DEPOSITO,

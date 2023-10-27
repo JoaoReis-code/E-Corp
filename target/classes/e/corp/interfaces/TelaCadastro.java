@@ -25,6 +25,7 @@ public class TelaCadastro extends javax.swing.JFrame {
      */
     public TelaCadastro() {
         initComponents();
+        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/icone.png")).getImage());
     }
 
     /**
@@ -94,32 +95,32 @@ public class TelaCadastro extends javax.swing.JFrame {
         cadastroLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
         cadastroLabel.setText("INSIRA SEUS DADOS");
         jPanel3.add(cadastroLabel);
-        cadastroLabel.setBounds(30, 10, 226, 32);
+        cadastroLabel.setBounds(30, 10, 238, 33);
 
         cpfLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         cpfLabel.setText("Cpf");
         jPanel3.add(cpfLabel);
-        cpfLabel.setBounds(30, 70, 22, 20);
+        cpfLabel.setBounds(30, 70, 200, 20);
 
         emailLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         emailLabel.setText("Email");
         jPanel3.add(emailLabel);
-        emailLabel.setBounds(30, 170, 34, 20);
+        emailLabel.setBounds(30, 170, 200, 20);
 
         diaLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         diaLabel.setText("Dia");
         jPanel3.add(diaLabel);
-        diaLabel.setBounds(30, 400, 21, 20);
+        diaLabel.setBounds(30, 400, 100, 20);
 
         sexoLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         sexoLabel.setText("Sexo");
         jPanel3.add(sexoLabel);
-        sexoLabel.setBounds(260, 220, 30, 20);
+        sexoLabel.setBounds(260, 220, 90, 20);
 
         rendaLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         rendaLabel.setText("Renda mensal");
         jPanel3.add(rendaLabel);
-        rendaLabel.setBounds(30, 220, 87, 20);
+        rendaLabel.setBounds(30, 220, 200, 20);
 
         nomeTextField.setBackground(new java.awt.Color(248, 248, 255));
         nomeTextField.setBorder(null);
@@ -129,7 +130,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
         jPanel3.add(nomeTextField);
-        nomeTextField.setBounds(30, 140, 200, 16);
+        nomeTextField.setBounds(30, 140, 200, 19);
 
         cpfTextField.setBackground(new java.awt.Color(248, 248, 255));
         cpfTextField.setBorder(null);
@@ -144,12 +145,12 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
         jPanel3.add(emailTextField);
-        emailTextField.setBounds(30, 190, 200, 16);
+        emailTextField.setBounds(30, 190, 200, 19);
 
         diaTextField.setBackground(new java.awt.Color(248, 248, 255));
         diaTextField.setBorder(null);
         jPanel3.add(diaTextField);
-        diaTextField.setBounds(30, 420, 100, 16);
+        diaTextField.setBounds(30, 420, 100, 19);
 
         rendaTextField.setBackground(new java.awt.Color(248, 248, 255));
         rendaTextField.setBorder(null);
@@ -159,19 +160,19 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
         jPanel3.add(rendaTextField);
-        rendaTextField.setBounds(30, 240, 200, 16);
+        rendaTextField.setBounds(30, 240, 200, 19);
 
         nomeLabel.setBackground(new java.awt.Color(0, 0, 0));
         nomeLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         nomeLabel.setText("Nome");
         jPanel3.add(nomeLabel);
-        nomeLabel.setBounds(30, 120, 38, 20);
+        nomeLabel.setBounds(30, 120, 200, 20);
 
         animalFavoritoLabel.setBackground(new java.awt.Color(0, 0, 0));
         animalFavoritoLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         animalFavoritoLabel.setText("Animal favorito");
         jPanel3.add(animalFavoritoLabel);
-        animalFavoritoLabel.setBounds(260, 70, 97, 20);
+        animalFavoritoLabel.setBounds(260, 70, 190, 20);
 
         animalFavoritoTextField.setBackground(new java.awt.Color(248, 248, 255));
         animalFavoritoTextField.setBorder(null);
@@ -181,13 +182,13 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
         jPanel3.add(animalFavoritoTextField);
-        animalFavoritoTextField.setBounds(260, 90, 200, 16);
+        animalFavoritoTextField.setBounds(260, 90, 200, 19);
 
         corFavoritaLabel.setBackground(new java.awt.Color(0, 0, 0));
         corFavoritaLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         corFavoritaLabel.setText("Cor favorita");
         jPanel3.add(corFavoritaLabel);
-        corFavoritaLabel.setBounds(260, 120, 74, 20);
+        corFavoritaLabel.setBounds(260, 120, 200, 20);
 
         corFavoritaTextField.setBackground(new java.awt.Color(248, 248, 255));
         corFavoritaTextField.setBorder(null);
@@ -197,13 +198,13 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
         jPanel3.add(corFavoritaTextField);
-        corFavoritaTextField.setBounds(260, 140, 200, 16);
+        corFavoritaTextField.setBounds(260, 140, 200, 19);
 
         comidaFavoritaLabel.setBackground(new java.awt.Color(0, 0, 0));
         comidaFavoritaLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         comidaFavoritaLabel.setText("Comida favorita");
         jPanel3.add(comidaFavoritaLabel);
-        comidaFavoritaLabel.setBounds(260, 170, 100, 20);
+        comidaFavoritaLabel.setBounds(260, 170, 200, 20);
 
         comidaFavoritaTextField.setBackground(new java.awt.Color(248, 248, 255));
         comidaFavoritaTextField.setBorder(null);
@@ -213,51 +214,51 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
         jPanel3.add(comidaFavoritaTextField);
-        comidaFavoritaTextField.setBounds(260, 190, 200, 16);
+        comidaFavoritaTextField.setBounds(260, 190, 200, 19);
 
         tipoContaLabel.setBackground(new java.awt.Color(0, 0, 0));
         tipoContaLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         tipoContaLabel.setText("Tipo da conta");
         jPanel3.add(tipoContaLabel);
-        tipoContaLabel.setBounds(370, 220, 86, 20);
+        tipoContaLabel.setBounds(370, 220, 110, 20);
 
         masculinoRadioButton.setBackground(new java.awt.Color(248, 248, 255));
         masculinoRadioButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         masculinoRadioButton.setText("Masculino");
         masculinoRadioButton.setBorder(null);
         jPanel3.add(masculinoRadioButton);
-        masculinoRadioButton.setBounds(260, 240, 76, 18);
+        masculinoRadioButton.setBounds(260, 240, 110, 19);
 
         femininoRadioButton.setBackground(new java.awt.Color(248, 248, 255));
         femininoRadioButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         femininoRadioButton.setText("Feminino");
         femininoRadioButton.setBorder(null);
         jPanel3.add(femininoRadioButton);
-        femininoRadioButton.setBounds(260, 260, 71, 18);
+        femininoRadioButton.setBounds(260, 260, 110, 19);
 
         correnteRadioButton.setBackground(new java.awt.Color(248, 248, 255));
         correnteRadioButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         correnteRadioButton.setText("Corrente");
         correnteRadioButton.setBorder(null);
         jPanel3.add(correnteRadioButton);
-        correnteRadioButton.setBounds(370, 240, 66, 18);
+        correnteRadioButton.setBounds(370, 240, 100, 19);
 
         poupancaRadioButton.setBackground(new java.awt.Color(248, 248, 255));
         poupancaRadioButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         poupancaRadioButton.setText("Poupanca");
         poupancaRadioButton.setBorder(null);
         jPanel3.add(poupancaRadioButton);
-        poupancaRadioButton.setBounds(370, 260, 74, 18);
+        poupancaRadioButton.setBounds(370, 260, 100, 19);
 
         dataLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         dataLabel1.setText("Data de nascimento");
         jPanel3.add(dataLabel1);
-        dataLabel1.setBounds(30, 280, 124, 20);
+        dataLabel1.setBounds(30, 280, 200, 20);
 
         mesLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         mesLabel.setText("Mes");
         jPanel3.add(mesLabel);
-        mesLabel.setBounds(30, 350, 26, 20);
+        mesLabel.setBounds(30, 350, 100, 20);
 
         mesTextField.setBackground(new java.awt.Color(248, 248, 255));
         mesTextField.setBorder(null);
@@ -267,17 +268,17 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
         jPanel3.add(mesTextField);
-        mesTextField.setBounds(30, 370, 100, 16);
+        mesTextField.setBounds(30, 370, 100, 19);
 
         anoLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         anoLabel.setText("Ano");
         jPanel3.add(anoLabel);
-        anoLabel.setBounds(30, 300, 25, 20);
+        anoLabel.setBounds(30, 300, 100, 20);
 
         anoTextField.setBackground(new java.awt.Color(248, 248, 255));
         anoTextField.setBorder(null);
         jPanel3.add(anoTextField);
-        anoTextField.setBounds(30, 320, 100, 16);
+        anoTextField.setBounds(30, 320, 100, 19);
         jPanel3.add(jSeparator1);
         jSeparator1.setBounds(260, 210, 200, 10);
         jPanel3.add(jSeparator2);

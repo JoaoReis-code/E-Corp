@@ -41,8 +41,22 @@ public class ECorp {
         String perguntaAnimal = "animal";
 
         Cliente c = new Cliente(nome, cpf, email, dataNascimento, sexo,rendaMensal);
+        Conta conta = new Conta(c,tipoConta,perguntaCor,perguntaComida,perguntaAnimal);
+        conta.setNumeroDaConta("1234");
+        conta.setSenha("admin123");
+        conta.realizarDeposito(100);
+        conta.realizarSaque(100);
+        System.out.println(conta.getSaldo());
         Crud.add(c);
-        Crud.add(new Conta(c,tipoConta,perguntaCor,perguntaComida,perguntaAnimal));
+        Crud.add(conta);
+
+        Cliente c2 = new Cliente(nome, cpf, email, dataNascimento, sexo,rendaMensal);
+        Conta conta2 = new Conta(c,tipoConta,perguntaCor,perguntaComida,perguntaAnimal);
+        conta2.getCliente().setCpf("11122233345");
+        conta2.setNumeroDaConta("12345");
+        conta2.setSenha("admin1234");
+        Crud.add(c2);
+        Crud.add(conta2);
         System.out.println(Crud.contas());
     }
 }

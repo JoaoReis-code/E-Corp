@@ -25,6 +25,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     public TelaPrincipal() {
         initComponents();
+        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/icone.png")).getImage());
     }
 
     /**
@@ -77,7 +78,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
         informacoesDoClienteLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/clienteImagem.png"))); // NOI18N
-        informacoesDoClienteLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        informacoesDoClienteLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         informacoesDoClienteLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 informacoesDoClienteLabelMouseClicked(evt);
@@ -93,7 +94,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         nomeDoClienteTextField.setBorder(null);
 
         saldoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/dinehrio.png"))); // NOI18N
-        saldoLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        saldoLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         saldoLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 saldoLabelMouseClicked(evt);
@@ -168,7 +169,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         saqueLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/saque.png"))); // NOI18N
         saqueLabel.setText("jLabel5");
-        saqueLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        saqueLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         saqueLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 saqueLabelMouseClicked(evt);
@@ -185,7 +186,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         pixLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/logo-pix.png"))); // NOI18N
         pixLabel.setText("jLabel6");
-        pixLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pixLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         pixLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pixLabelMouseClicked(evt);
@@ -220,7 +221,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         emprestimoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/emprestimo.png"))); // NOI18N
         emprestimoLabel.setText("jLabel3");
-        emprestimoLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        emprestimoLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         emprestimoLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 emprestimoLabelMouseClicked(evt);
@@ -231,7 +232,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         boletoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/boleto.png"))); // NOI18N
         boletoLabel.setText("jLabel8");
-        boletoLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        boletoLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         boletoLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 boletoLabelMouseClicked(evt);
@@ -242,7 +243,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         creditoEspecialLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/credito-especial.png"))); // NOI18N
         creditoEspecialLabel.setText("jLabel9");
-        creditoEspecialLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        creditoEspecialLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         creditoEspecialLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 creditoEspecialLabelMouseClicked(evt);
@@ -301,7 +302,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         financiamentoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/financiamento.png"))); // NOI18N
         financiamentoLabel.setText("jLabel2");
-        financiamentoLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        financiamentoLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         financiamentoLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 financiamentoLabelMouseClicked(evt);
@@ -354,7 +355,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(cartaoButton1);
-        cartaoButton1.setBounds(600, 110, 160, 27);
+        cartaoButton1.setBounds(600, 110, 160, 26);
 
         cartaoButton2.setBackground(new java.awt.Color(0, 0, 0));
         cartaoButton2.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
@@ -366,7 +367,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(cartaoButton2);
-        cartaoButton2.setBounds(600, 140, 70, 27);
+        cartaoButton2.setBounds(600, 140, 80, 26);
 
         cartaoButton3.setBackground(new java.awt.Color(0, 0, 0));
         cartaoButton3.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
@@ -378,7 +379,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(cartaoButton3);
-        cartaoButton3.setBounds(690, 140, 70, 27);
+        cartaoButton3.setBounds(680, 140, 80, 26);
 
         senhaLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/senha.png"))); // NOI18N
         senhaLabel.setText("jLabel3");
@@ -437,16 +438,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         try {
-            Conta contaDestino = Crud.buscarConta(numeroConta);
             if (valorPIX.matches("-?[0-9]*(\\.[0-9]+)?")) {
-                if (contaDestino != null) {
-                    contaLogada.realizarPix(Double.parseDouble(valorPIX), contaLogada);
+                    contaLogada.realizarPix(Double.parseDouble(valorPIX), Crud.buscarConta(numeroConta));
                     valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
                     JOptionPane.showMessageDialog(null, "Transacao feita com sucesso", "PIX", JOptionPane.PLAIN_MESSAGE);
-
-                } else {
-                    JOptionPane.showMessageDialog(null, "Essa conta nao foi encontrada", "Erro", JOptionPane.PLAIN_MESSAGE);
-                }
             } else {
                 JOptionPane.showMessageDialog(null, "Informe apenas numeros", "Erro", JOptionPane.PLAIN_MESSAGE);
             }
@@ -457,11 +452,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_pixButtonActionPerformed
 
     private void saqueLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saqueLabelMouseClicked
-        JOptionPane.showMessageDialog(null, contaLogada.getLimiteSaque(), "Limite conta", JOptionPane.PLAIN_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Limite de saque da conta: R$" + contaLogada.getLimiteSaque(), "Limite conta", JOptionPane.PLAIN_MESSAGE);
     }//GEN-LAST:event_saqueLabelMouseClicked
 
     private void pixLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pixLabelMouseClicked
-        JOptionPane.showMessageDialog(null, contaLogada.getLimitePix(), "Limite conta", JOptionPane.PLAIN_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Limite de Pix da conta: R$" +contaLogada.getLimitePix(), "Limite conta", JOptionPane.PLAIN_MESSAGE);
     }//GEN-LAST:event_pixLabelMouseClicked
 
     private void saqueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saqueButtonActionPerformed
@@ -560,7 +555,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         try {
             if (valorEmprestimo.matches("-?[0-9]*(\\.[0-9]+)?") && numeroDeParcelas.matches("-?[0-9]*(\\.[0-9]+)?")) {
                 try {
-                    Crud.add(new Emprestimo(contaLogada.getCliente(), Double.parseDouble(valorEmprestimo), Integer.parseInt(numeroDeParcelas)));
+                    Crud.add(new Emprestimo(contaLogada, Double.parseDouble(valorEmprestimo), Integer.parseInt(numeroDeParcelas)));
                     valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
                     JOptionPane.showMessageDialog(null, "Emprestimo realizado com sucesso", "Emprestimo", JOptionPane.PLAIN_MESSAGE);
                 } catch (Exception ex) {
@@ -633,7 +628,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         try {
             if (valorFinanciamento.matches("-?[0-9]*(\\.[0-9]+)?") && numeroDeParcelas.matches("-?[0-9]*(\\.[0-9]+)?")) {
                 try {
-                    Crud.add(new Financiamento(contaLogada.getCliente(), Double.parseDouble(valorFinanciamento), Integer.parseInt(numeroDeParcelas), objetoFinanciado));
+                    Crud.add(new Financiamento(contaLogada, Double.parseDouble(valorFinanciamento), Integer.parseInt(numeroDeParcelas), objetoFinanciado));
                     valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
                     JOptionPane.showMessageDialog(null, "Financiamento realizado com sucesso!", "Financiamento", JOptionPane.PLAIN_MESSAGE);
                 } catch (Exception ex) {
@@ -663,7 +658,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 Financiamento financiamento = Crud.buscarFinanciamento(codigoFinanciamento);
                 if (financiamento != null) {
                     try {
-                        financiamento.pagarParcelaFinanciamento(financiamento.getValorParcela(), contaLogada);
+                        financiamento.pagarParcelaFinanciamento( contaLogada);
                         valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
                         JOptionPane.showMessageDialog(null, "Pagamento realizado com sucesso", "Financiamento", JOptionPane.PLAIN_MESSAGE);
                     } catch (Exception ex) {
@@ -693,7 +688,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 Emprestimo emprestimo = Crud.buscarEmprestimo(codigoEmprestimo);
                 if (emprestimo != null) {
                     try {
-                        emprestimo.pagarParcelaEmprestimo(emprestimo.getValorParcela(), contaLogada);
+                        emprestimo.pagarParcelaEmprestimo(contaLogada);
                         valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
                         JOptionPane.showMessageDialog(null, "Pagamento realizado com sucesso", "Emprestimo", JOptionPane.PLAIN_MESSAGE);
                     } catch (Exception ex) {
@@ -724,18 +719,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         TipoCartao tipoCartao;
 
-        String senha = JOptionPane.showInputDialog(
-            null,
-            "Senha voce deseja colcoar?",
-            "Cartao",
-            JOptionPane.QUESTION_MESSAGE);
-
         try {
-            if (!(cartao.isEmpty() || senha.isEmpty())) {
+            if (!(cartao.isEmpty())) {
                 if (cartao.toUpperCase().equals("CREDITO")) {
                     tipoCartao = TipoCartao.CREDITO;
                     try {
-                        Cartao c = new Cartao(contaLogada.getCliente(), senha, tipoCartao);
+                        Cartao c = new Cartao(contaLogada.getCliente(), tipoCartao);
                         Crud.add(c);
                         JOptionPane.showMessageDialog(null, "Cartao criado com sucesso", "Erro", JOptionPane.PLAIN_MESSAGE);
                         System.out.println(Crud.cartoes());
@@ -745,7 +734,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 } else if (cartao.toUpperCase().equals("DEBITO")) {
                     tipoCartao = TipoCartao.DEBITO;
                     try {
-                        Cartao c = new Cartao(contaLogada.getCliente(), senha, tipoCartao);
+                        Cartao c = new Cartao(contaLogada.getCliente(),tipoCartao);
                         Crud.add(c);
                     } catch (Exception ex) {
                         JOptionPane.showMessageDialog(null, ex.getMessage(), "Erro", JOptionPane.PLAIN_MESSAGE);

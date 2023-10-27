@@ -24,36 +24,40 @@ public class Emprestimo {
     private int numeroParcelasTotais;
     private int numeroParcelasRestantes;
 
-    public Emprestimo(Cliente cliente, double valorTotal, int numeroParcelas){
+    public Emprestimo(Conta conta, double valorTotal, int numeroParcelas){
 
-        if(!validarEmprestimo(cliente.getRendaMensal(),valorTotal)){
+        if(!validarEmprestimo(conta.getCliente().getRendaMensal(),valorTotal)){
             throw new OperacaoInvalidaException("Voce nao pode fazer um emprestimo no nosso banco");
         }
 
         this.id = gerarNumero(4);
-        this.cliente = cliente;
+        this.cliente = conta.getCliente();
         this.numeroParcelasTotais = numeroParcelas;
         this.valorTotal = valorTotal;
         this.valorParcela = valorTotal / numeroParcelas;
         this.numeroParcelasRestantes = numeroParcelas;
         this.valorDivida = this.valorParcela * this.numeroParcelasRestantes;
+
+        conta.setSaldo(conta.getSaldo() + valorTotal);
     }
 
-    public boolean validarEmprestimo(double rendaMensal, double valorEmprestimo){
+    public static boolean validarEmprestimo(double rendaMensal, double valorEmprestimo){
         return ((rendaMensal*0.3)*24) > valorEmprestimo;
     }
 
-    public void pagarParcelaEmprestimo(double valor, Conta conta){
+    public void pagarParcelaEmprestimo(Conta conta){
         if(this.valorParcela > conta.getSaldo()){
             throw new OperacaoInvalidaException("Voce nao possui esse valor.");
-        }else if(valor < 0){
-            throw new OperacaoInvalidaException("Insira um valor positivo.");
-        }else{
-
-            conta.setExtrato(this.cliente,null, TipoTransacao.PARCELAEMPRESTIMO, -valor);
-            conta.setSaldo(-valor);
-            this.numeroParcelasRestantes --;
         }
+            if(numeroParcelasRestantes>0){
+                conta.setExtrato(this.cliente,null, TipoTransacao.PARCELAEMPRESTIMO, this.valorParcela);
+                conta.setSaldo(conta.getSaldo() - this.valorParcela);
+                this.numeroParcelasRestantes --;
+                this.valorDivida = this.valorParcela * this.numeroParcelasRestantes;
+            } else if (numeroParcelasRestantes == 0) {
+                this.valorDivida = 0;
+                throw new OperacaoInvalidaException("Voce ja pagou todo o seu emprestimo.");
+            }
     }
 
     public int vizualizarNumeroDeParcelas(){
@@ -62,5 +66,17 @@ public class Emprestimo {
 
     public double vizualizarDivida(){
         return this.valorDivida;
+    }
+
+    @Override
+    public String toString() {
+        return "Emprestimo{" +
+                "id = '" + id + '\'' +
+                ", valorTotal = " + valorTotal +
+                ", valorDivida = " + valorDivida +
+                ", valorParcela = " + valorParcela +
+                ", numeroParcelasTotais = " + numeroParcelasTotais +
+                ", numeroParcelasRestantes = " + numeroParcelasRestantes +
+                "}\n";
     }
 }

@@ -24,7 +24,8 @@ public class Crud {
         contas.add(conta);
     }
 
-    public static void remove(Conta conta) {
+    public static void excluirConta(Conta conta) {
+        conta = null;
         contas.remove(conta);
     }
 
@@ -93,13 +94,15 @@ public class Crud {
         return null;
     }
 
-    public static Emprestimo matchEmprestimo(Cliente cliente) {
+    public static List<Emprestimo> matchEmprestimo(Cliente cliente) {
+        List<Emprestimo> emprestimosCliente = new LinkedList<>();
+
         for (Emprestimo emprestimo : emprestimos) {
             if (emprestimo.getCliente().equals(cliente)) {
-                return emprestimo;
+                emprestimosCliente.add(emprestimo);
             }
         }
-        return null;
+        return emprestimosCliente;
     }
 
     public static void add(Financiamento financiamento) {
@@ -122,13 +125,14 @@ public class Crud {
         return null;
     }
 
-    public static Financiamento matchFinanciamento(Cliente cliente) {
+    public static List<Financiamento> matchFinanciamento(Cliente cliente) {
+        List<Financiamento> financiamentosCliente = new LinkedList<>();
         for (Financiamento financiamento : financiamentos) {
             if (financiamento.getCliente().equals(cliente)) {
-                return financiamento;
+                financiamentosCliente.add(financiamento);
             }
         }
-        return null;
+        return financiamentosCliente;
     }
 
     public static void add(Boleto boleto) {
@@ -176,13 +180,14 @@ public class Crud {
         return null;
     }
 
-    public static Cartao matchCartoes(Cliente cliente) {
+    public static List<Cartao> matchCartoes(Cliente cliente) {
+        List<Cartao> cartoesCliente = new LinkedList<>();
         for (Cartao cartao : cartoes) {
             if (cartao.getCpfCliente().equals(cliente.getCpf())) {
-                return cartao;
+                cartoesCliente.add(cartao);
             }
         }
-        return null;
+        return cartoesCliente;
     }
 }
 

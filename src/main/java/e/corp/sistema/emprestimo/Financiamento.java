@@ -26,39 +26,43 @@ public class Financiamento {
     private int numeroParcelasTotais;
     private int numeroParcelasRestantes;
 
-    public Financiamento(Cliente cliente, double valorTotal, int numeroParcelas, String objetoFinanciado){
+    public Financiamento(Conta conta, double valorTotal, int numeroParcelas, String objetoFinanciado){
 
-        if(!validarFinanciamento(cliente.getRendaMensal(),valorTotal)){
+        if(!validarFinanciamento(conta.getCliente().getRendaMensal(),valorTotal)){
             throw new OperacaoInvalidaException("Voce nao pode fazer um financiamento no nosso banco");
         }
 
         this.id = gerarNumero(4);
-        this.cliente = cliente;
+        this.cliente = conta.getCliente();
         this.numeroParcelasTotais = numeroParcelas;
         this.objetoFinanciado = objetoFinanciado;
         this.valorTotal = valorTotal;
         this.valorParcela = valorTotal / numeroParcelas;
         this.numeroParcelasRestantes = numeroParcelas;
         this.valorDivida = this.valorParcela * this.numeroParcelasRestantes;
+
+        conta.setSaldo(conta.getSaldo() + valorTotal);
     }
 
-    public boolean validarFinanciamento(double rendaMensal, double valorFinanciamento){
+    public static boolean validarFinanciamento(double rendaMensal, double valorFinanciamento){
         return ((rendaMensal*0.2)*72) > valorFinanciamento;
     }
 
-    public void pagarParcelaFinanciamento(double valor, Conta conta){
+    public void pagarParcelaFinanciamento(Conta conta){
         if(this.valorParcela > conta.getSaldo()){
             throw new OperacaoInvalidaException("Voce nao possui esse valor.");
-        }else if(valor < 0){
-            throw new OperacaoInvalidaException("Insira um valor positivo.");
-        }else{
-
-            conta.setExtrato(this.cliente,null, TipoTransacao.PARCELAFINANCIAMENTO, -valor);
-            conta.setSaldo(-valor);
-            this.numeroParcelasRestantes --;
-            this.valorParcela = this.valorParcela * numeroParcelasRestantes * 1.05;
-
         }
+
+        if(numeroParcelasRestantes>0){
+            conta.setExtrato(this.cliente,null, TipoTransacao.PARCELAFINANCIAMENTO, this.valorParcela);
+            conta.setSaldo(conta.getSaldo() - this.valorParcela);
+            this.numeroParcelasRestantes --;
+            this.valorDivida = this.valorParcela * this.numeroParcelasRestantes;
+        } else if (numeroParcelasRestantes == 0) {
+            this.valorDivida = 0;
+            throw new OperacaoInvalidaException("Voce ja pagou todo o seu financiamento.");
+        }
+
     }
 
     public int vizualizarNumeroDeParcelas(){
@@ -67,5 +71,18 @@ public class Financiamento {
 
     public double vizualizarDivida(){
         return this.valorDivida;
+    }
+
+    @Override
+    public String toString() {
+        return "Financiamento{" +
+                "id = '" + id + '\'' +
+                ", objetoFinanciado = '" + objetoFinanciado + '\'' +
+                ", valorTotal = " + valorTotal +
+                ", valorDivida = " + valorDivida +
+                ", valorParcela = " + valorParcela +
+                ", numeroParcelasTotais = " + numeroParcelasTotais +
+                ", numeroParcelasRestantes = " + numeroParcelasRestantes +
+                "}\n";
     }
 }

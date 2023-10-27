@@ -29,4 +29,14 @@ public class Transacao {
         this.data = LocalDate.now();
     }
 
+    @Override
+    public String toString() {
+        return "Transacao{\n" +
+                "clienteRemetente = " + clienteRemetente +
+                ", clienteDestinatario = " + clienteDestinatario +
+                ", tipoTransacao = " + tipoTransacao +
+                ", valor = " + valor +
+                ", data = " + data +
+                "}\n";
+    }
 }
