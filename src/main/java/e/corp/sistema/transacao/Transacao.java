@@ -10,7 +10,6 @@ import java.time.LocalDate;
 
 @Setter
 @Getter
-@ToString
 public class Transacao {
 
     private static int id;

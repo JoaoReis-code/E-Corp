@@ -166,7 +166,6 @@ public class TelaLogin extends javax.swing.JFrame {
             if (Crud.buscarConta(login).getSenha().equals(senha)) {
 
                 contaLogada = Crud.buscarConta(login);
-                System.out.println(contaLogada);
                 TelaPrincipal tela = new TelaPrincipal();
                 tela.setVisible(true);
                 tela.setLocationRelativeTo(null);
@@ -175,7 +174,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "A senha que voce digitou esta incorreta");
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Esse cliente nao existe");
+            JOptionPane.showMessageDialog(null, "Essa conta nao existe");
         }
     }//GEN-LAST:event_loginButtonActionPerformed
 

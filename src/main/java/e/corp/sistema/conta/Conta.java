@@ -22,7 +22,6 @@ import static e.corp.sistema.gerador.GeradorDeCaracteres.*;
 
 @Setter
 @Getter
-@ToString
 public class Conta{
 
     private Cliente cliente;

@@ -15,7 +15,6 @@ import static e.corp.sistema.gerador.GeradorDeCaracteres.gerarNumero;
 
 @Setter
 @Getter
-@ToString
 public class Cartao {
 
     private String nome;
@@ -114,4 +113,21 @@ public class Cartao {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Cartao{" +
+                "nome='" + nome + '\'' +
+                ", cpfCliente='" + cpfCliente + '\'' +
+                ", numero='" + numero + '\'' +
+                ", vencimento=" + vencimento +
+                ", cvv='" + cvv + '\'' +
+                ", limite=" + limite +
+                ", senha='" + senha + '\'' +
+                ", tipoCartao=" + tipoCartao +
+                ", valorDivida=" + valorDivida +
+                ", valorParcela=" + valorParcela +
+                ", numeroParcelasTotais=" + numeroParcelasTotais +
+                ", numeroParcelasRestantes=" + numeroParcelasRestantes +
+                "}\n";
+    }
 }

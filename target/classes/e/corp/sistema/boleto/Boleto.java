@@ -11,7 +11,6 @@ import java.time.LocalDate;
 
 @Setter
 @Getter
-@ToString
 public class Boleto {
 
     private String codigo;
@@ -31,8 +30,18 @@ public class Boleto {
         this.pago = false;
     }
 
-    public boolean validaValor(double valor){
+    public static boolean validaValor(double valor){
         return (valor>0);
     }
 
+    @Override
+    public String toString() {
+        return "Boleto{" +
+                "codigo='" + codigo + '\'' +
+                ", vencimento=" + vencimento +
+                ", dataPagamento=" + dataPagamento +
+                ", valor=" + valor +
+                ", pago=" + pago +
+                "}\n";
+    }
 }

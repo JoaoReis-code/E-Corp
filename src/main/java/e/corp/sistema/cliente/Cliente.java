@@ -10,7 +10,6 @@ import java.time.LocalDate;
 
 @Setter
 @Getter
-@ToString
 public class Cliente {
 
     private String nome;

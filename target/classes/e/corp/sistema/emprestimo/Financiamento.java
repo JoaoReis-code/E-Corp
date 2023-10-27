@@ -14,7 +14,6 @@ import static e.corp.sistema.gerador.GeradorDeCaracteres.gerarNumero;
 
 @Setter
 @Getter
-@ToString
 public class Financiamento {
 
     private String id;
@@ -40,7 +39,7 @@ public class Financiamento {
         this.valorParcela = valorTotal / numeroParcelas;
         this.numeroParcelasRestantes = numeroParcelas;
         this.valorDivida = this.valorParcela * this.numeroParcelasRestantes;
-
+        conta.setExtrato(this.cliente,null, TipoTransacao.FINANCIAMENTO, this.valorParcela);
         conta.setSaldo(conta.getSaldo() + valorTotal);
     }
 

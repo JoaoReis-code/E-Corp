@@ -418,10 +418,10 @@ public class TelaCadastro extends javax.swing.JFrame {
 
                 JOptionPane.showMessageDialog(null, "Conta criada com sucesso!");
 
-               /* TelaPrincipal tela = new TelaPrincipal();
+                TelaPrincipal tela = new TelaPrincipal();
                 tela.setVisible(true);
                 tela.setLocationRelativeTo(null);
-                this.dispose();*/
+                this.dispose();
 
             } catch (HeadlessException | NumberFormatException ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage());

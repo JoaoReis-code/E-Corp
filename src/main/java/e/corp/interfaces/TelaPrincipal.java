@@ -65,6 +65,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cartaoButton2 = new javax.swing.JButton();
         cartaoButton3 = new javax.swing.JButton();
         senhaLabel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("E-Corp");
@@ -389,7 +390,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(senhaLabel);
-        senhaLabel.setBounds(700, 400, 75, 75);
+        senhaLabel.setBounds(610, 410, 75, 75);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/chis.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(710, 410, 75, 75);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -874,6 +885,33 @@ public class TelaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_senhaLabelMouseClicked
 
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        String senha = JOptionPane.showInputDialog(
+                null,
+                "Digite sua senhapoder confirmar:",
+                "EXCLUIR CONTA",
+                JOptionPane.QUESTION_MESSAGE);
+
+        if(senha.equals(contaLogada.getSenha())){
+            try{
+                Crud.excluirConta(contaLogada);
+
+                JOptionPane.showMessageDialog(null, "Conta excluida com sucesse!", "Sucesso", JOptionPane.PLAIN_MESSAGE);
+
+                TelaLogin tela = new TelaLogin();
+                tela.setVisible(true);
+                tela.setLocationRelativeTo(null);
+                this.dispose();
+            }catch (Exception ex){
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "Erro", JOptionPane.PLAIN_MESSAGE);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "A sua senha esta errada", "Erro", JOptionPane.PLAIN_MESSAGE);
+        }
+
+
+    }//GEN-LAST:event_jLabel1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -925,6 +963,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton financiamentoButton;
     private javax.swing.JLabel financiamentoLabel;
     private javax.swing.JLabel informacoesDoClienteLabel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -6,6 +6,7 @@ import e.corp.sistema.cliente.Cliente;
 import e.corp.sistema.emprestimo.Emprestimo;
 import e.corp.sistema.emprestimo.Financiamento;
 import e.corp.sistema.cartao.Cartao;
+import e.corp.sistema.exception.ValidacaoException;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -25,8 +26,11 @@ public class Crud {
     }
 
     public static void excluirConta(Conta conta) {
-        conta = null;
-        contas.remove(conta);
+        if(conta.getSaldo() >= 0){
+            contas.remove(conta);
+        }else{
+            throw new ValidacaoException("Voce so pode excluir sua conta se nao estiver devendo o banco");
+        }
     }
 
     public static List<Conta> contas() {
@@ -43,19 +47,20 @@ public class Crud {
         return null;
     }
 
-    public static Conta buscarConta(Cliente cliente) {
+    /*public static Conta buscarConta(Cliente cliente) {
         for (Conta conta : contas) {
             if (conta.getCliente().equals(cliente)) {
                 return conta;
             }
         }
         return null;
-    }
+    }*/
 
     public static void add(Cliente cliente) {
         clientes.add(cliente);
     }
 
+    /*
     public static void remove(Cliente cliente) {
         clientes.remove(cliente);
     }
@@ -71,19 +76,20 @@ public class Crud {
             }
         }
         return null;
-    }
+    }*/
 
     public static void add(Emprestimo emprestimo) {
         emprestimos.add(emprestimo);
     }
 
+    /*
     public static void remove(Emprestimo emprestimo) {
         emprestimos.remove(emprestimo);
     }
 
     public static List<Emprestimo> emprestimos() {
         return emprestimos;
-    }
+    }*/
 
     public static Emprestimo buscarEmprestimo(String id) {
         for (Emprestimo emprestimo : emprestimos) {
@@ -108,13 +114,14 @@ public class Crud {
     public static void add(Financiamento financiamento) {
         financiamentos.add(financiamento);
     }
+    /*
     public static void remove(Financiamento financiamento) {
         financiamentos.remove(financiamento);
     }
 
     public static List<Financiamento> financiamentos() {
         return financiamentos;
-    }
+    }*/
 
     public static Financiamento buscarFinanciamento(String id) {
         for (Financiamento financiamento : financiamentos) {
@@ -134,6 +141,7 @@ public class Crud {
         }
         return financiamentosCliente;
     }
+
 
     public static void add(Boleto boleto) {
         boletos.add(boleto);
