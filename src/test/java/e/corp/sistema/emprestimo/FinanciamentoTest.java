@@ -14,7 +14,7 @@ import java.time.LocalDate;
 import static e.corp.sistema.emprestimo.Financiamento.validarFinanciamento;
 import static org.junit.jupiter.api.Assertions.*;
 
-class financiamentoTest {
+class FinanciamentoTest {
 
     private Conta conta;
     private Cliente cliente;
