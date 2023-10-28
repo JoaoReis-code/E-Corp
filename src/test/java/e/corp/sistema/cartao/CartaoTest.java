@@ -228,7 +228,7 @@ class CartaoTest {
     @DisplayName("Valida limite restante do cartao de credito")
     public void testCartaoCredito01() {
         double valor = 100;
-        cartaoCredito.credito(conta, valor, cartaoCredito.getSenha(), 2);
+        cartaoCredito.credito(valor, cartaoCredito.getSenha(), 2);
 
 
         assertEquals(cartaoCredito.getLimite(), (conta.getCliente().getRendaMensal() * 1.1) - valor);
@@ -238,7 +238,7 @@ class CartaoTest {
     @DisplayName("Valida valor da divida do cartao de credito")
     public void testCartaoCredito02() {
         double valor = 100;
-        cartaoCredito.credito(conta, valor, cartaoCredito.getSenha(), 2);
+        cartaoCredito.credito(valor, cartaoCredito.getSenha(), 2);
 
 
         assertEquals(cartaoCredito.getValorDivida(), valor);
@@ -248,7 +248,7 @@ class CartaoTest {
     @DisplayName("Valida o numero de parcelas do cartao de credito")
     public void testCartaoCredito03() {
         int parcelas = 4;
-        cartaoCredito.credito(conta, conta.getCliente().getRendaMensal() * 1, cartaoCredito.getSenha(), parcelas);
+        cartaoCredito.credito( conta.getCliente().getRendaMensal() * 1, cartaoCredito.getSenha(), parcelas);
 
 
         assertEquals(cartaoCredito.getNumeroParcelasTotais(), parcelas);
@@ -261,7 +261,7 @@ class CartaoTest {
 
 
         try {
-            cartaoCredito.credito(conta, conta.getCliente().getRendaMensal() * 2, cartaoCredito.getSenha(), 2);
+            cartaoCredito.credito(conta.getCliente().getRendaMensal() * 2, cartaoCredito.getSenha(), 2);
         } catch (Exception ex) {
             message = ex.getMessage();
         }
@@ -275,7 +275,7 @@ class CartaoTest {
 
         cartaoCredito.setSenha("0000");
         try {
-            cartaoCredito.credito(conta, conta.getCliente().getRendaMensal() * 1, "1234", 2);
+            cartaoCredito.credito(conta.getCliente().getRendaMensal() * 1, "1234", 2);
         } catch (Exception ex) {
             message = ex.getMessage();
         }
@@ -288,7 +288,7 @@ class CartaoTest {
         String message = "";
 
         try {
-            cartaoCredito.credito(conta, conta.getCliente().getRendaMensal() * -1, "1234", 2);
+            cartaoCredito.credito(conta.getCliente().getRendaMensal() * -1, "1234", 2);
         } catch (Exception ex) {
             message = ex.getMessage();
         }
@@ -301,7 +301,7 @@ class CartaoTest {
         String message = "";
 
         try {
-            cartaoDebito.credito(conta, conta.getCliente().getRendaMensal() * 1, "1234", 2);
+            cartaoDebito.credito(conta.getCliente().getRendaMensal() * 1, "1234", 2);
         } catch (Exception ex) {
             message = ex.getMessage();
         }
@@ -315,7 +315,7 @@ class CartaoTest {
 
         try {
             conta.setSaldo(500);
-            cartaoCredito.credito(conta, 1000, cartaoCredito.getSenha(), 2);
+            cartaoCredito.credito(1000, cartaoCredito.getSenha(), 2);
             cartaoDebito.pagarParcela(conta);
         } catch (Exception ex) {
             message = ex.getMessage();
@@ -329,7 +329,7 @@ class CartaoTest {
     public void testCartaoCredito09() {
 
         conta.setSaldo(500);
-        cartaoCredito.credito(conta, 1000, cartaoCredito.getSenha(), 2);
+        cartaoCredito.credito(1000, cartaoCredito.getSenha(), 2);
         cartaoCredito.pagarParcela(conta);
 
         assertEquals(1, cartaoCredito.getNumeroParcelasRestantes());
@@ -339,7 +339,7 @@ class CartaoTest {
     @DisplayName("Valida numero de parcelas totais do cartao de credito")
     public void testCartaoCredito10() {
 
-        cartaoCredito.credito(conta, 1000, cartaoCredito.getSenha(), 10);
+        cartaoCredito.credito(1000, cartaoCredito.getSenha(), 10);
 
         assertEquals(10, cartaoCredito.getNumeroParcelasTotais());
     }
@@ -352,7 +352,7 @@ class CartaoTest {
         conta.setSaldo(5000);
 
         try {
-            cartaoCredito.credito(conta, 500, cartaoCredito.getSenha(), 1);
+            cartaoCredito.credito( 500, cartaoCredito.getSenha(), 1);
             cartaoCredito.pagarParcela(conta);
             cartaoCredito.pagarParcela(conta);
         } catch (Exception ex) {
@@ -369,7 +369,7 @@ class CartaoTest {
 
         try {
             conta.setSaldo(5000);
-            cartaoCredito.credito(conta, 500, cartaoCredito.getSenha(), 2);
+            cartaoCredito.credito( 500, cartaoCredito.getSenha(), 2);
             cartaoCredito.pagarParcela(conta);
             cartaoCredito.pagarParcela(conta);
             cartaoCredito.pagarParcela(conta);
@@ -387,7 +387,7 @@ class CartaoTest {
 
         try {
             conta.setSaldo(50);
-            cartaoCredito.credito(conta, 500, cartaoCredito.getSenha(), 2);
+            cartaoCredito.credito( 500, cartaoCredito.getSenha(), 2);
             cartaoCredito.pagarParcela(conta);
         } catch (Exception ex) {
             message = ex.getMessage();
@@ -403,7 +403,7 @@ class CartaoTest {
         double valor = -202;
 
         try {
-            cartaoCredito.credito(conta, valor, cartaoCredito.getSenha(), 5);
+            cartaoCredito.credito( valor, cartaoCredito.getSenha(), 5);
         } catch (Exception ex) {
             message = ex.getMessage();
         }
@@ -419,7 +419,7 @@ class CartaoTest {
         String message = "";
 
         try {
-            cartaoCredito.credito(conta, valor, cartaoCredito.getSenha(), 2);
+            cartaoCredito.credito( valor, cartaoCredito.getSenha(), 2);
         } catch (Exception ex) {
             message = ex.getMessage();
         }
@@ -430,7 +430,7 @@ class CartaoTest {
     @DisplayName("Valida muitas parcelas do cartao de credito")
     public void testCartaoCredito16() {
         int parcelas = 24;
-        cartaoCredito.credito(conta, conta.getCliente().getRendaMensal() * 1, cartaoCredito.getSenha(), parcelas);
+        cartaoCredito.credito(conta.getCliente().getRendaMensal() * 1, cartaoCredito.getSenha(), parcelas);
 
 
         assertEquals(cartaoCredito.getNumeroParcelasTotais(), parcelas);
@@ -443,7 +443,7 @@ class CartaoTest {
 
 
         try {
-            cartaoCredito.credito(conta, conta.getCliente().getRendaMensal() * 20, cartaoCredito.getSenha(), 2);
+            cartaoCredito.credito( conta.getCliente().getRendaMensal() * 20, cartaoCredito.getSenha(), 2);
         } catch (Exception ex) {
             message = ex.getMessage();
         }
@@ -457,7 +457,7 @@ class CartaoTest {
 
 
         try {
-            cartaoCredito.credito(conta, conta.getCliente().getRendaMensal() * -3, cartaoCredito.getSenha(), 2);
+            cartaoCredito.credito(conta.getCliente().getRendaMensal() * -3, cartaoCredito.getSenha(), 2);
         } catch (Exception ex) {
             message = ex.getMessage();
         }
@@ -471,7 +471,7 @@ class CartaoTest {
 
         cartaoCredito.setSenha("6969");
         try {
-            cartaoCredito.credito(conta, conta.getCliente().getRendaMensal() * 1, "9696", 2);
+            cartaoCredito.credito(conta.getCliente().getRendaMensal() * 1, "9696", 2);
         } catch (Exception ex) {
             message = ex.getMessage();
         }
@@ -484,7 +484,7 @@ class CartaoTest {
         String message = "";
 
         try {
-            cartaoCredito.credito(conta, conta.getCliente().getRendaMensal() * 100, "1234", 2);
+            cartaoCredito.credito(conta.getCliente().getRendaMensal() * 100, "1234", 2);
         } catch (Exception ex) {
             message = ex.getMessage();
         }
@@ -498,7 +498,7 @@ class CartaoTest {
 
         try {
             conta.setSaldo(-92000);
-            cartaoCredito.credito(conta, 2654, cartaoCredito.getSenha(), 22);
+            cartaoCredito.credito(2654, cartaoCredito.getSenha(), 22);
             cartaoCredito.pagarParcela(conta);
         } catch (Exception ex) {
             message = ex.getMessage();
@@ -512,7 +512,7 @@ class CartaoTest {
     public void testCartaoCredito22() {
 
         conta.setSaldo(50000);
-        cartaoCredito.credito(conta, 1000, cartaoCredito.getSenha(), 24);
+        cartaoCredito.credito( 1000, cartaoCredito.getSenha(), 24);
         cartaoCredito.pagarParcela(conta);
         cartaoCredito.pagarParcela(conta);
         cartaoCredito.pagarParcela(conta);

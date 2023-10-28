@@ -7,7 +7,6 @@ import e.corp.sistema.exception.ValidacaoException;
 import e.corp.sistema.transacao.TipoTransacao;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 import java.time.LocalDate;
 
@@ -69,7 +68,7 @@ public class Cartao {
         }
     }
 
-    public void credito(Conta conta, double valor, String senha, int numeroParcelas) {
+    public void credito(double valor, String senha, int numeroParcelas) {
         if (TipoCartao.CREDITO == this.tipoCartao) {
             if (valor > 0) {
                 if (senha.equals(this.senha)) {

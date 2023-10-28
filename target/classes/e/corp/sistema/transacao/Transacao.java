@@ -1,10 +1,9 @@
 package e.corp.sistema.transacao;
 
 
+import e.corp.sistema.cliente.Cliente;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
-import e.corp.sistema.cliente.Cliente;
 
 import java.time.LocalDate;
 
@@ -19,8 +18,8 @@ public class Transacao {
     private double valor;
     private LocalDate data;
 
-    public Transacao(Cliente clienteRemetente, Cliente clienteDestinatario, TipoTransacao tipoTransacao, double valor){
-        id ++;
+    public Transacao(Cliente clienteRemetente, Cliente clienteDestinatario, TipoTransacao tipoTransacao, double valor) {
+        id++;
         this.clienteRemetente = clienteRemetente;
         this.clienteDestinatario = clienteDestinatario;
         this.tipoTransacao = tipoTransacao;
