@@ -1,7 +1,5 @@
 package e.corp.sistema.emprestimo;
 
-import e.corp.sistema.cartao.Cartao;
-import e.corp.sistema.cartao.TipoCartao;
 import e.corp.sistema.cliente.Cliente;
 import e.corp.sistema.cliente.Sexo;
 import e.corp.sistema.conta.Conta;
@@ -22,7 +20,7 @@ class EmprestimoTest {
     private Emprestimo emprestimo;
 
     @BeforeEach
-    public void init(){
+    public void init() {
         String nome = "Joao";
         String cpf = "11122233344";
         String email = "dgbdb@dfdfd";
@@ -35,63 +33,63 @@ class EmprestimoTest {
         String perguntaComida = "macarrao";
         String perguntaAnimal = "cachorro";
 
-        cliente = new Cliente(nome, cpf, email, dataNascimento, sexo,rendaMensal);
-        conta = new Conta(cliente,tipoConta,perguntaCor,perguntaComida,perguntaAnimal);
+        cliente = new Cliente(nome, cpf, email, dataNascimento, sexo, rendaMensal);
+        conta = new Conta(cliente, tipoConta, perguntaCor, perguntaComida, perguntaAnimal);
         conta.setSaldo(1000);
 
-        emprestimo = new Emprestimo(conta, 1200,12);
+        emprestimo = new Emprestimo(conta, 1200, 12);
     }
 
     @Test
     @DisplayName("Verifica se emprestimo e valido")
-    public void testEmprestimo01(){
-        assertTrue(( validarEmprestimo(cliente.getRendaMensal(), 1000)));
+    public void testEmprestimo01() {
+        assertTrue((validarEmprestimo(cliente.getRendaMensal(), 1000)));
     }
 
     @Test
     @DisplayName("Verifica se emprestimo e valido")
-    public void testEmprestimo02(){
-        assertFalse(( validarEmprestimo(cliente.getRendaMensal(), 20000)));
+    public void testEmprestimo02() {
+        assertFalse((validarEmprestimo(cliente.getRendaMensal(), 20000)));
     }
 
     @Test
     @DisplayName("Verifica se possui saldo ao pagar emprestimo")
-    public void testEmprestimo03(){
+    public void testEmprestimo03() {
 
         String mensagem = "";
 
         conta.setSaldo(10);
-        try{
+        try {
             emprestimo.pagarParcelaEmprestimo(conta);
-        }catch (Exception ex){
+        } catch (Exception ex) {
             mensagem = ex.getMessage();
         }
-        assertEquals(mensagem,"Voce nao possui esse valor.");
+        assertEquals(mensagem, "Voce nao possui esse valor.");
     }
 
     @Test
     @DisplayName("Verifica se ja pagou todas as parcelas do emprestimo")
-    public void testEmprestimo04(){
+    public void testEmprestimo04() {
 
         String mensagem = "";
         emprestimo.setNumeroParcelasRestantes(0);
-        try{
+        try {
             emprestimo.pagarParcelaEmprestimo(conta);
-        }catch (Exception ex){
+        } catch (Exception ex) {
             mensagem = ex.getMessage();
         }
-        assertEquals(mensagem,"Voce ja pagou todo o seu emprestimo.");
+        assertEquals(mensagem, "Voce ja pagou todo o seu emprestimo.");
     }
 
     @Test
     @DisplayName("Verifica se divida e limpa depois que ja pagou todas as parcelas do emprestimo")
-    public void testEmprestimo05(){
+    public void testEmprestimo05() {
 
         String mensagem = "";
         emprestimo.setNumeroParcelasRestantes(0);
-        try{
+        try {
             emprestimo.pagarParcelaEmprestimo(conta);
-        }catch (Exception ex){
+        } catch (Exception ex) {
             mensagem = ex.getMessage();
         }
         assertEquals(0, emprestimo.getValorDivida());
@@ -99,60 +97,60 @@ class EmprestimoTest {
 
     @Test
     @DisplayName("Emprestimo valido")
-    public void testEmprestimo06(){
-        assertTrue(( validarEmprestimo(cliente.getRendaMensal(), 670)));
+    public void testEmprestimo06() {
+        assertTrue((validarEmprestimo(cliente.getRendaMensal(), 670)));
     }
 
     @Test
     @DisplayName("Verifica se emprestimo e valido")
-    public void testEmprestimo07(){
-        assertFalse(( validarEmprestimo(cliente.getRendaMensal(), 97000000)));
+    public void testEmprestimo07() {
+        assertFalse((validarEmprestimo(cliente.getRendaMensal(), 97000000)));
     }
 
     @Test
     @DisplayName("Verifica saldo ao pagar emprestimo")
-    public void testEmprestimo08(){
+    public void testEmprestimo08() {
 
         String mensagem = "";
 
         conta.setSaldo(-10);
-        try{
+        try {
             emprestimo.pagarParcelaEmprestimo(conta);
-        }catch (Exception ex){
+        } catch (Exception ex) {
             mensagem = ex.getMessage();
         }
-        assertEquals(mensagem,"Voce nao possui esse valor.");
+        assertEquals(mensagem, "Voce nao possui esse valor.");
     }
 
     @Test
     @DisplayName("Verifica se saldo igual a zero ao pagar emprestimo")
-    public void testEmprestimo09(){
+    public void testEmprestimo09() {
 
         String mensagem = "";
 
         conta.setSaldo(0);
-        try{
+        try {
             emprestimo.pagarParcelaEmprestimo(conta);
-        }catch (Exception ex){
+        } catch (Exception ex) {
             mensagem = ex.getMessage();
         }
-        assertEquals(mensagem,"Voce nao possui esse valor.");
+        assertEquals(mensagem, "Voce nao possui esse valor.");
     }
 
     @Test
     @DisplayName("Verifica se parcelas estao pagas")
-    public void testEmprestimo10(){
+    public void testEmprestimo10() {
 
         String mensagem = "";
         emprestimo.setNumeroParcelasRestantes(1);
         conta.setSaldo(99999);
-        try{
+        try {
             emprestimo.pagarParcelaEmprestimo(conta);
             emprestimo.pagarParcelaEmprestimo(conta);
-        }catch (Exception ex){
+        } catch (Exception ex) {
             mensagem = ex.getMessage();
         }
-        assertEquals(mensagem,"Voce ja pagou todo o seu emprestimo.");
+        assertEquals(mensagem, "Voce ja pagou todo o seu emprestimo.");
     }
 
 }

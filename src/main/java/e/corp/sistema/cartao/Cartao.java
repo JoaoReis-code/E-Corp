@@ -7,7 +7,6 @@ import e.corp.sistema.exception.ValidacaoException;
 import e.corp.sistema.transacao.TipoTransacao;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 import java.time.LocalDate;
 

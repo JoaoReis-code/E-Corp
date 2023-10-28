@@ -4,28 +4,105 @@
  */
 package e.corp.interfaces;
 
-import static e.corp.ECorp.contaLogada;
 import e.corp.sistema.cliente.Cliente;
 import e.corp.sistema.cliente.Sexo;
 import e.corp.sistema.conta.Conta;
 import e.corp.sistema.conta.TipoConta;
 import e.corp.sistema.crud.Crud;
-import java.awt.HeadlessException;
+
+import javax.swing.*;
+import java.awt.*;
 import java.time.LocalDate;
-import javax.swing.JOptionPane;
+
+import static e.corp.ECorp.contaLogada;
 
 /**
- *
  * @author Jz
  */
 public class TelaCadastro extends javax.swing.JFrame {
 
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel animalFavoritoLabel;
+    private javax.swing.JTextField animalFavoritoTextField;
+    private javax.swing.JLabel anoLabel;
+    private javax.swing.JTextField anoTextField;
+    private javax.swing.JLabel cadastroLabel;
+    private javax.swing.JLabel comidaFavoritaLabel;
+    private javax.swing.JTextField comidaFavoritaTextField;
+    private javax.swing.JLabel corFavoritaLabel;
+    private javax.swing.JTextField corFavoritaTextField;
+    private javax.swing.JRadioButton correnteRadioButton;
+    private javax.swing.JLabel cpfLabel;
+    private javax.swing.JTextField cpfTextField;
+    private javax.swing.JLabel dataLabel1;
+    private javax.swing.JLabel diaLabel;
+    private javax.swing.JTextField diaTextField;
+    private javax.swing.JLabel emailLabel;
+    private javax.swing.JTextField emailTextField;
+    private javax.swing.JRadioButton femininoRadioButton;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JRadioButton masculinoRadioButton;
+    private javax.swing.JLabel mesLabel;
+    private javax.swing.JTextField mesTextField;
+    private javax.swing.JLabel nomeLabel;
+    private javax.swing.JTextField nomeTextField;
+    private javax.swing.JRadioButton poupancaRadioButton;
+    private javax.swing.JLabel rendaLabel;
+    private javax.swing.JTextField rendaTextField;
+    private javax.swing.JLabel sexoLabel;
+    private javax.swing.JLabel tipoContaLabel;
     /**
      * Creates new form TelaCadastro
      */
     public TelaCadastro() {
         initComponents();
         this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/icone.png")).getImage());
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> {
+            new TelaCadastro().setVisible(true);
+        });
     }
 
     /**
@@ -317,23 +394,23 @@ public class TelaCadastro extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 131, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35))
+                jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 131, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(35, 35, 35))
         );
         jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
+                jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addGap(120, 120, 120)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40))
         );
 
         jPanel3.add(jPanel4);
@@ -401,10 +478,10 @@ public class TelaCadastro extends javax.swing.JFrame {
         }
 
         if (nome.isEmpty() || cpf.isEmpty() || email.isEmpty() ||
-            renda.isEmpty() || ano.isEmpty() || mes.isEmpty() ||
-            dia.isEmpty() || animalFavorito.isEmpty() ||
-            comidaFavorita.isEmpty() || corFavorita.isEmpty() ||
-            sexo == null || tipoConta == null) {
+                renda.isEmpty() || ano.isEmpty() || mes.isEmpty() ||
+                dia.isEmpty() || animalFavorito.isEmpty() ||
+                comidaFavorita.isEmpty() || corFavorita.isEmpty() ||
+                sexo == null || tipoConta == null) {
             JOptionPane.showMessageDialog(null, "Todos os campos precisam estar preenchidos");
         } else {
             try {
@@ -428,82 +505,5 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new TelaCadastro().setVisible(true);
-        });
-    }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel animalFavoritoLabel;
-    private javax.swing.JTextField animalFavoritoTextField;
-    private javax.swing.JLabel anoLabel;
-    private javax.swing.JTextField anoTextField;
-    private javax.swing.JLabel cadastroLabel;
-    private javax.swing.JLabel comidaFavoritaLabel;
-    private javax.swing.JTextField comidaFavoritaTextField;
-    private javax.swing.JLabel corFavoritaLabel;
-    private javax.swing.JTextField corFavoritaTextField;
-    private javax.swing.JRadioButton correnteRadioButton;
-    private javax.swing.JLabel cpfLabel;
-    private javax.swing.JTextField cpfTextField;
-    private javax.swing.JLabel dataLabel1;
-    private javax.swing.JLabel diaLabel;
-    private javax.swing.JTextField diaTextField;
-    private javax.swing.JLabel emailLabel;
-    private javax.swing.JTextField emailTextField;
-    private javax.swing.JRadioButton femininoRadioButton;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator10;
-    private javax.swing.JSeparator jSeparator11;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JRadioButton masculinoRadioButton;
-    private javax.swing.JLabel mesLabel;
-    private javax.swing.JTextField mesTextField;
-    private javax.swing.JLabel nomeLabel;
-    private javax.swing.JTextField nomeTextField;
-    private javax.swing.JRadioButton poupancaRadioButton;
-    private javax.swing.JLabel rendaLabel;
-    private javax.swing.JTextField rendaTextField;
-    private javax.swing.JLabel sexoLabel;
-    private javax.swing.JLabel tipoContaLabel;
     // End of variables declaration//GEN-END:variables
 }

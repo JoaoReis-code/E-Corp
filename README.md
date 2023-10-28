@@ -2,7 +2,7 @@
 
 O projeto deve rodar em java 21
 
-Tem dois usuarios instanciados para fins de teste pratico do programa 
+Tem dois usuarios instanciados para fins de teste pratico do programa
 
 Admin1 -> Login:123456, Senha:admin123
 
