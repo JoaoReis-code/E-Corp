@@ -18,4 +18,22 @@ class BoletoTest {
     public void testBoleto02(){
         assertFalse(validaValor(-10));
     }
+
+    @Test
+    @DisplayName("Valida valor positivo alto para o boleto")
+    public void testBoleto03(){
+        assertTrue(validaValor(25000));
+    }
+
+    @Test
+    @DisplayName("Valida valor nulo para o boleto")
+    public void testBoleto04(){
+        assertFalse(validaValor(0));
+    }
+
+    @Test
+    @DisplayName("Valida valor negativo baixo para o boleto")
+    public void testBoleto05(){
+        assertFalse(validaValor(-1000));
+    }
 }

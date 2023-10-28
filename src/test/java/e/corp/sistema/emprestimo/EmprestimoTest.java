@@ -84,7 +84,7 @@ class EmprestimoTest {
     }
 
     @Test
-    @DisplayName("Verifica se devida e limpa depois que ja pagou todas as parcelas do emprestimo")
+    @DisplayName("Verifica se divida e limpa depois que ja pagou todas as parcelas do emprestimo")
     public void testEmprestimo05(){
 
         String mensagem = "";
@@ -96,4 +96,63 @@ class EmprestimoTest {
         }
         assertEquals(0, emprestimo.getValorDivida());
     }
+
+    @Test
+    @DisplayName("Emprestimo valido")
+    public void testEmprestimo06(){
+        assertTrue(( validarEmprestimo(cliente.getRendaMensal(), 670)));
+    }
+
+    @Test
+    @DisplayName("Verifica se emprestimo e valido")
+    public void testEmprestimo07(){
+        assertFalse(( validarEmprestimo(cliente.getRendaMensal(), 97000000)));
+    }
+
+    @Test
+    @DisplayName("Verifica saldo ao pagar emprestimo")
+    public void testEmprestimo08(){
+
+        String mensagem = "";
+
+        conta.setSaldo(-10);
+        try{
+            emprestimo.pagarParcelaEmprestimo(conta);
+        }catch (Exception ex){
+            mensagem = ex.getMessage();
+        }
+        assertEquals(mensagem,"Voce nao possui esse valor.");
+    }
+
+    @Test
+    @DisplayName("Verifica se saldo igual a zero ao pagar emprestimo")
+    public void testEmprestimo09(){
+
+        String mensagem = "";
+
+        conta.setSaldo(0);
+        try{
+            emprestimo.pagarParcelaEmprestimo(conta);
+        }catch (Exception ex){
+            mensagem = ex.getMessage();
+        }
+        assertEquals(mensagem,"Voce nao possui esse valor.");
+    }
+
+    @Test
+    @DisplayName("Verifica se parcelas estao pagas")
+    public void testEmprestimo10(){
+
+        String mensagem = "";
+        emprestimo.setNumeroParcelasRestantes(1);
+        conta.setSaldo(99999);
+        try{
+            emprestimo.pagarParcelaEmprestimo(conta);
+            emprestimo.pagarParcelaEmprestimo(conta);
+        }catch (Exception ex){
+            mensagem = ex.getMessage();
+        }
+        assertEquals(mensagem,"Voce ja pagou todo o seu emprestimo.");
+    }
+
 }

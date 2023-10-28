@@ -37,8 +37,8 @@ public class ECorp {
 
         TipoConta tipoConta = TipoConta.POUPANCA;
         String perguntaCor = "preto";
-        String perguntaComida = "comida";
-        String perguntaAnimal = "animal";
+        String perguntaComida = "macarrao";
+        String perguntaAnimal = "cachorro";
 
         Cliente c = new Cliente(nome, cpf, email, dataNascimento, sexo,rendaMensal);
         Conta conta = new Conta(c,tipoConta,perguntaCor,perguntaComida,perguntaAnimal);

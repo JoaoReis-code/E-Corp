@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
+import static e.corp.sistema.emprestimo.Emprestimo.validarEmprestimo;
 import static e.corp.sistema.emprestimo.Financiamento.validarFinanciamento;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -94,5 +95,63 @@ class FinanciamentoTest {
             mensagem = ex.getMessage();
         }
         assertEquals(0, financiamento.getValorDivida());
+    }
+
+    @Test
+    @DisplayName("Financiamento valido")
+    public void testFinanciamento06(){
+        assertTrue(( validarFinanciamento(cliente.getRendaMensal(), 670)));
+    }
+
+    @Test
+    @DisplayName("Verifica se financiamento e valido")
+    public void testFinanciamento07(){
+        assertFalse(( validarFinanciamento(cliente.getRendaMensal(), 97000000)));
+    }
+
+    @Test
+    @DisplayName("Verifica saldo ao pagar financiamento")
+    public void testFinanciamento08(){
+
+        String mensagem = "";
+
+        conta.setSaldo(-10);
+        try{
+            financiamento.pagarParcelaFinanciamento(conta);
+        }catch (Exception ex){
+            mensagem = ex.getMessage();
+        }
+        assertEquals(mensagem,"Voce nao possui esse valor.");
+    }
+
+    @Test
+    @DisplayName("Verifica se saldo igual a zero ao pagar financiamento")
+    public void testFinanciamento09(){
+
+        String mensagem = "";
+
+        conta.setSaldo(0);
+        try{
+            financiamento.pagarParcelaFinanciamento(conta);
+        }catch (Exception ex){
+            mensagem = ex.getMessage();
+        }
+        assertEquals(mensagem,"Voce nao possui esse valor.");
+    }
+
+    @Test
+    @DisplayName("Verifica se parcelas estao pagas")
+    public void testFinanciamento10(){
+
+        String mensagem = "";
+        financiamento.setNumeroParcelasRestantes(1);
+        conta.setSaldo(99999);
+        try{
+            financiamento.pagarParcelaFinanciamento(conta);
+            financiamento.pagarParcelaFinanciamento(conta);
+        }catch (Exception ex){
+            mensagem = ex.getMessage();
+        }
+        assertEquals(mensagem,"Voce ja pagou todo o seu financiamento.");
     }
 }

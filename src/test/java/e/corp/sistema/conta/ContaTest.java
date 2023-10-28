@@ -225,7 +225,7 @@ class ContaTest {
 
 
     @Test
-    @DisplayName("Utiliza credito especial")
+    @DisplayName("Utiliza credito especial sem saldo")
     public void testCreditoEspecial01(){
         double valorEsperado = -1 * conta.getLimiteCreditoEspecial();
 
@@ -267,18 +267,89 @@ class ContaTest {
     }
 
     @Test
-    @DisplayName("Valida perguntas de seguranca")
-    public void testPerguntaSeguranca01(){
-        assertEquals(true, conta.perguntaSeguranca("cachorro", "preto", "macarrao"));
+    @DisplayName("Utiliza credito especial saldo 0")
+    public void testCreditoEspecial04(){
+        double valorEsperado = -1 * conta.getLimiteCreditoEspecial();
+
+        conta.setSaldo(0);
+        conta.creditoEspecial();
+
+        assertEquals(valorEsperado,conta.getSaldo());
     }
 
     @Test
-    @DisplayName("Pergutnas de seguranca invalidas")
+    @DisplayName("Nao permite credito especial")
+    public void testCreditoEspecial05(){
+        String mensagem = "";
+
+        conta.setSaldo(2456);
+
+        try{
+            conta.creditoEspecial();
+        }catch (Exception ex){
+            mensagem = ex.getMessage();
+        }
+
+        assertEquals(mensagem,"Voce so pode usar o credito especial quando esta com exastos 0 R$.");
+    }
+
+    @Test
+    @DisplayName("Impede devedor de usar o credito especial")
+    public void testCreditoEspecial06(){
+        String mensagem = "";
+
+        conta.setSaldo(-7685);
+
+        try{
+            conta.creditoEspecial();
+        }catch (Exception ex){
+            mensagem = ex.getMessage();
+        }
+
+        assertEquals(mensagem,"Voce so pode usar o credito especial quando esta com exastos 0 R$.");
+    }
+
+    @Test
+    @DisplayName("Valida perguntas de seguranca")
+    public void testPerguntaSeguranca01(){
+        assertEquals(true, conta.perguntaSeguranca(conta.getPerguntaAnimal(), conta.getPerguntaCor(), conta.getPerguntaComida()));
+    }
+
+    @Test
+    @DisplayName("Pergutnas de seguranca todas invalidas")
     public void testPerguntaSeguranca02(){
         String mensagem = "";
 
         try{
             conta.perguntaSeguranca("animal", "cor", "comida");
+        }catch (Exception ex){
+            mensagem = ex.getMessage();
+        }
+
+        assertEquals(mensagem,"Alguma pergunta esta errada. Operacao negada.");
+    }
+
+    @Test
+    @DisplayName("Pergutnas de seguranca duas invalidas")
+    public void testPerguntaSeguranca03(){
+        String mensagem = "";
+
+        try{
+            conta.perguntaSeguranca(conta.getPerguntaAnimal(), "cor", "comida");
+        }catch (Exception ex){
+            mensagem = ex.getMessage();
+        }
+
+        assertEquals(mensagem,"Alguma pergunta esta errada. Operacao negada.");
+    }
+
+    @Test
+    @DisplayName("Pergutnas de seguranca uma invalida")
+    public void testPerguntaSeguranca04(){
+        String mensagem = "";
+
+        try{
+            conta.perguntaSeguranca(conta.getPerguntaAnimal(), conta.getPerguntaCor(), "comida");
         }catch (Exception ex){
             mensagem = ex.getMessage();
         }
@@ -334,6 +405,40 @@ class ContaTest {
     public void testBoleto04(){
         String mensagem = "";
         Boleto boleto = new Boleto(LocalDate.of(2020,12,2),1000);
+
+        conta.setSaldo(10000);
+
+        try{
+            conta.pagarBoleto(boleto);
+        }catch (Exception ex){
+            mensagem = ex.getMessage();
+        }
+
+        assertEquals(mensagem,"Esse boleto ja esta vencido.");
+    }
+
+    @Test
+    @DisplayName("Boleto de valor negativo")
+    public void testBoleto05(){
+        String mensagem = "";
+        conta.setSaldo(10000);
+
+        try{
+            Boleto boleto = new Boleto(LocalDate.of(2024,12,2),-20);
+            boleto.setPago(true);
+            conta.pagarBoleto(boleto);
+        }catch (Exception ex){
+            mensagem = ex.getMessage();
+        }
+
+        assertEquals(mensagem,"Valor nao pode ser menor que 0");
+    }
+
+    @Test
+    @DisplayName("Boleto de ontem")
+    public void testBoleto06(){
+        String mensagem = "";
+        Boleto boleto = new Boleto(LocalDate.now().minusDays(1),1000);
 
         conta.setSaldo(10000);
 
