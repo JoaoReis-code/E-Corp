@@ -93,6 +93,7 @@ public class Conta {
             this.saldo += valor;
         }
     }
+
     public void pagarBoleto(Boleto boleto) {
         if (boleto.getValor() > this.saldo) {
             throw new OperacaoInvalidaException("Voce nao possui saldo suficiente.");
@@ -105,6 +106,7 @@ public class Conta {
         this.saldo -= boleto.getValor();
         boleto.setPago(true);
     }
+
     public void creditoEspecial() {
 
         if (!(this.saldo == 0)) {
@@ -114,6 +116,7 @@ public class Conta {
         this.extrato.add(new Transacao(this.cliente, null, TipoTransacao.CREDITOESPECIAL, limiteCreditoEspecial));
         this.saldo -= limiteCreditoEspecial;
     }
+
     public List<Transacao> visualizarExtrato() {
         return this.extrato;
     }

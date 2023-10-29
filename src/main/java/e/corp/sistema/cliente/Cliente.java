@@ -41,12 +41,15 @@ public class Cliente {
         LocalDate dataAtual = LocalDate.now().minusYears(18);
         return dataAtual.isAfter(dataFornecida);
     }
+
     public static boolean validarCpf(String cpf) {
         return ((cpf.length() == 11) && (cpf.matches("[0-9]*")));
     }
+
     public static boolean validarEmail(String email) {
         return (email.indexOf('@') > 0);
     }
+
     public static boolean validaRendaMensal(double rendaMensal) {
         return (rendaMensal > 0);
     }

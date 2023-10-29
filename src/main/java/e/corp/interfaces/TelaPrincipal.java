@@ -49,6 +49,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel saqueLabel;
     private javax.swing.JLabel senhaLabel;
     private javax.swing.JTextField valorTextField;
+
     /**
      * Creates new form TelaPrincipal
      */

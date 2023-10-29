@@ -24,6 +24,7 @@ public class Crud {
     public static void add(Conta conta) {
         contas.add(conta);
     }
+
     public static Conta buscarConta(String numeroConta) {
         for (Conta conta : contas) {
             if (conta.getNumeroDaConta().equals(numeroConta)) {
@@ -32,6 +33,7 @@ public class Crud {
         }
         return null;
     }
+
     public static void excluirConta(Conta conta) {
         if (conta.getSaldo() >= 0) {
             contas.remove(conta);
@@ -43,9 +45,6 @@ public class Crud {
     public static List<Conta> contas() {
         return contas;
     }
-
-
-
 
     public static void add(Cliente cliente) {
         clientes.add(cliente);

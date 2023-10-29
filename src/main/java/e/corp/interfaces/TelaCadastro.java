@@ -11,7 +11,6 @@ import e.corp.sistema.conta.TipoConta;
 import e.corp.sistema.crud.Crud;
 
 import javax.swing.*;
-import java.awt.*;
 import java.time.LocalDate;
 
 import static e.corp.ECorp.contaLogada;
@@ -64,6 +63,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     private javax.swing.JTextField rendaTextField;
     private javax.swing.JLabel sexoLabel;
     private javax.swing.JLabel tipoContaLabel;
+
     /**
      * Creates new form TelaCadastro
      */
