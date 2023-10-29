@@ -39,7 +39,8 @@ public class Emprestimo {
         conta.setSaldo(conta.getSaldo() + valorTotal);
     }
 
-    public static boolean validarEmprestimo(double rendaMensal, double valorEmprestimo) {
+    public static boolean validarEmprestimo(double rendaMensal,
+                                            double valorEmprestimo) {
         return ((rendaMensal * 0.3) * 24) > valorEmprestimo;
     }
 

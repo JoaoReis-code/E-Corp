@@ -18,7 +18,9 @@ public class Transacao {
     private double valor;
     private LocalDate data;
 
-    public Transacao(Cliente clienteRemetente, Cliente clienteDestinatario, TipoTransacao tipoTransacao, double valor) {
+    public Transacao(Cliente clienteRemetente,
+                     Cliente clienteDestinatario,
+                     TipoTransacao tipoTransacao, double valor) {
         id++;
         this.clienteRemetente = clienteRemetente;
         this.clienteDestinatario = clienteDestinatario;

@@ -482,7 +482,14 @@ public class TelaCadastro extends javax.swing.JFrame {
                 dia.isEmpty() || animalFavorito.isEmpty() ||
                 comidaFavorita.isEmpty() || corFavorita.isEmpty() ||
                 sexo == null || tipoConta == null) {
+
             JOptionPane.showMessageDialog(null, "Todos os campos precisam estar preenchidos");
+
+            TelaLogin tela = new TelaLogin();
+            tela.setVisible(true);
+            tela.setLocationRelativeTo(null);
+            this.dispose();
+
         } else {
             try {
                 LocalDate dataNascimento = LocalDate.of(Integer.parseInt(ano), Integer.parseInt(mes), Integer.parseInt(dia));
@@ -500,7 +507,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                 tela.setLocationRelativeTo(null);
                 this.dispose();
 
-            } catch (HeadlessException | NumberFormatException ex) {
+            } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage());
             }
         }
