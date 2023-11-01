@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
+import static e.corp.sistema.emprestimo.Financiamento.calculaJuros;
 import static e.corp.sistema.emprestimo.Financiamento.validarFinanciamento;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -152,4 +153,86 @@ class FinanciamentoTest {
         }
         assertEquals(mensagem, "Voce ja pagou todo o seu financiamento.");
     }
+
+    @Test
+    @DisplayName("Calcula juros")
+    public void testFinanciamento11() {
+        double valorEsperado = 69.69;
+
+        assertEquals(calculaJuros(6859), valorEsperado);
+    }
+
+    @Test
+    @DisplayName("Calcula juros")
+    public void testFinanciamento12() {
+        double valorEsperado = 1.2;
+
+        assertEquals(calculaJuros(10), valorEsperado);
+    }
+
+    @Test
+    @DisplayName("Calcula juros")
+    public void testFinanciamento13() {
+        double valorEsperado = 1.35;
+
+        assertEquals(calculaJuros(25), valorEsperado);
+    }
+
+    @Test
+    @DisplayName("Calcula juros")
+    public void testFinanciamento14() {
+        double valorEsperado = 2.1;
+
+        assertEquals(calculaJuros(100), valorEsperado);
+    }
+
+    @Test
+    @DisplayName("Calcula juros")
+    public void testFinanciamento15() {
+        double valorEsperado = 1.22;
+
+        assertEquals(calculaJuros(12), valorEsperado);
+    }
+
+    @Test
+    @DisplayName("Calcula juros")
+    public void testFinanciamento16() {
+        double valorEsperado = 1.11;
+
+        assertEquals(calculaJuros(1), valorEsperado);
+    }
+
+    @Test
+    @DisplayName("Calcula juros")
+    public void testFinanciamento17() {
+        double valorEsperado = 1.4;
+
+        assertEquals(calculaJuros(30), valorEsperado);
+    }
+
+    @Test
+    @DisplayName("Calcula juros")
+    public void testFinanciamento18() {
+        double valorEsperado = 11.1;
+
+        assertEquals(calculaJuros(1000), valorEsperado);
+    }
+
+    @Test
+    @DisplayName("Calcula juros")
+    public void testFinanciamento19() {
+        double valorEsperado = 1.9;
+
+        assertEquals(calculaJuros(80), valorEsperado);
+    }
+
+    @Test
+    @DisplayName("Calcula juros")
+    public void testFinanciamento20() {
+        double valorEsperado = 1.57;
+
+        assertEquals(calculaJuros(47), valorEsperado);
+    }
+
+
 }

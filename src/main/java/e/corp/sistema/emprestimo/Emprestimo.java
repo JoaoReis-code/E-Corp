@@ -8,6 +8,9 @@ import e.corp.sistema.transacao.TipoTransacao;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 import static e.corp.sistema.gerador.GeradorDeCaracteres.gerarNumero;
 
 @Setter
@@ -32,7 +35,7 @@ public class Emprestimo {
         this.cliente = conta.getCliente();
         this.numeroParcelasTotais = numeroParcelas;
         this.valorTotal = valorTotal;
-        this.valorParcela = valorTotal / numeroParcelas;
+        this.valorParcela = valorTotal * calculaJuros(numeroParcelas) / numeroParcelas;
         this.numeroParcelasRestantes = numeroParcelas;
         this.valorDivida = this.valorParcela * this.numeroParcelasRestantes;
         conta.setExtrato(this.cliente, null, TipoTransacao.EMPRESTIMO, this.valorParcela);
@@ -41,6 +44,11 @@ public class Emprestimo {
 
     public static boolean validarEmprestimo(double rendaMensal, double valorEmprestimo) {
         return ((rendaMensal * 0.3) * 24) > valorEmprestimo;
+    }
+
+    public static double calculaJuros(int numeroParcelas) {
+        double valorJuros = (double) numeroParcelas / 100 + 1;
+        return new BigDecimal(valorJuros).setScale(2, RoundingMode.HALF_UP).doubleValue();
     }
 
     public void pagarParcelaEmprestimo(Conta conta) {

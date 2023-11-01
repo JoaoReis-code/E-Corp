@@ -4,28 +4,92 @@
  */
 package e.corp.interfaces;
 
-import static e.corp.ECorp.contaLogada;
-
 import e.corp.sistema.cartao.Cartao;
 import e.corp.sistema.cartao.TipoCartao;
-import e.corp.sistema.conta.Conta;
 import e.corp.sistema.crud.Crud;
 import e.corp.sistema.emprestimo.Emprestimo;
 import e.corp.sistema.emprestimo.Financiamento;
-import javax.swing.JOptionPane;
+
+import javax.swing.*;
+
+import static e.corp.ECorp.contaLogada;
 
 /**
- *
  * @author Jz
  */
 public class TelaPrincipal extends javax.swing.JFrame {
 
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton boletoButton;
+    private javax.swing.JLabel boletoLabel;
+    private javax.swing.JButton cartaoButton1;
+    private javax.swing.JButton cartaoButton2;
+    private javax.swing.JButton cartaoButton3;
+    private javax.swing.JLabel cartaoLabel;
+    private javax.swing.JButton creditoEspecialButton;
+    private javax.swing.JLabel creditoEspecialLabel;
+    private javax.swing.JButton depositoButton;
+    private javax.swing.JLabel depositoLabel;
+    private javax.swing.JButton emprestimoButton;
+    private javax.swing.JLabel emprestimoLabel;
+    private javax.swing.JButton financiamentoButton;
+    private javax.swing.JLabel financiamentoLabel;
+    private javax.swing.JLabel informacoesDoClienteLabel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField nomeDoClienteTextField;
+    private javax.swing.JButton pagarEmprestimoButton;
+    private javax.swing.JButton pagarFinanciamentoButton;
+    private javax.swing.JButton pixButton;
+    private javax.swing.JLabel pixLabel;
+    private javax.swing.JLabel saldoLabel;
+    private javax.swing.JButton saqueButton;
+    private javax.swing.JLabel saqueLabel;
+    private javax.swing.JLabel senhaLabel;
+    private javax.swing.JTextField valorTextField;
     /**
      * Creates new form TelaPrincipal
      */
     public TelaPrincipal() {
         initComponents();
         this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/icone.png")).getImage());
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new TelaPrincipal().setVisible(true);
+            }
+        });
     }
 
     /**
@@ -120,37 +184,37 @@ public class TelaPrincipal extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(saldoLabel)
-                            .addComponent(informacoesDoClienteLabel))
-                        .addContainerGap(129, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(valorTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                .addComponent(nomeDoClienteTextField, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(jLabel2))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(saldoLabel)
+                                                        .addComponent(informacoesDoClienteLabel))
+                                                .addContainerGap(129, Short.MAX_VALUE))
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                                .addComponent(valorTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                                                .addComponent(nomeDoClienteTextField, javax.swing.GroupLayout.Alignment.LEADING))
+                                                        .addComponent(jLabel2))
+                                                .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(informacoesDoClienteLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nomeDoClienteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
-                .addComponent(saldoLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(valorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(15, 15, 15))
+                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(informacoesDoClienteLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(nomeDoClienteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(19, 19, 19)
+                                .addComponent(saldoLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(valorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
+                                .addComponent(jLabel2)
+                                .addGap(15, 15, 15))
         );
 
         jPanel1.add(jPanel2);
@@ -405,12 +469,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
 
         pack();
@@ -435,24 +499,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void pixButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pixButtonActionPerformed
         String valorPIX = JOptionPane.showInputDialog(
-            null,
-            "Digite quanto voce deseja sacar:",
-            "PIX",
-            JOptionPane.QUESTION_MESSAGE
+                null,
+                "Digite quanto voce deseja sacar:",
+                "PIX",
+                JOptionPane.QUESTION_MESSAGE
         );
 
         String numeroConta = JOptionPane.showInputDialog(
-            null,
-            "Digite o numero da conta de destino:",
-            "PIX",
-            JOptionPane.QUESTION_MESSAGE
+                null,
+                "Digite o numero da conta de destino:",
+                "PIX",
+                JOptionPane.QUESTION_MESSAGE
         );
 
         try {
             if (valorPIX.matches("-?[0-9]*(\\.[0-9]+)?")) {
-                    contaLogada.realizarPix(Double.parseDouble(valorPIX), Crud.buscarConta(numeroConta));
-                    valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
-                    JOptionPane.showMessageDialog(null, "Transacao feita com sucesso", "PIX", JOptionPane.PLAIN_MESSAGE);
+                contaLogada.realizarPix(Double.parseDouble(valorPIX), Crud.buscarConta(numeroConta));
+                valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
+                JOptionPane.showMessageDialog(null, "Transacao feita com sucesso", "PIX", JOptionPane.PLAIN_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(null, "Informe apenas numeros", "Erro", JOptionPane.PLAIN_MESSAGE);
             }
@@ -463,19 +527,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_pixButtonActionPerformed
 
     private void saqueLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saqueLabelMouseClicked
-        JOptionPane.showMessageDialog(null,"Limite de saque da conta: R$" + contaLogada.getLimiteSaque(), "Limite conta", JOptionPane.PLAIN_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Limite de saque da conta: R$" + contaLogada.getLimiteSaque(), "Limite conta", JOptionPane.PLAIN_MESSAGE);
     }//GEN-LAST:event_saqueLabelMouseClicked
 
     private void pixLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pixLabelMouseClicked
-        JOptionPane.showMessageDialog(null, "Limite de Pix da conta: R$" +contaLogada.getLimitePix(), "Limite conta", JOptionPane.PLAIN_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Limite de Pix da conta: R$" + contaLogada.getLimitePix(), "Limite conta", JOptionPane.PLAIN_MESSAGE);
     }//GEN-LAST:event_pixLabelMouseClicked
 
     private void saqueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saqueButtonActionPerformed
         String valorSaque = JOptionPane.showInputDialog(
-            null,
-            "Digite quanto deseja sacar:",
-            "Saque",
-            JOptionPane.QUESTION_MESSAGE
+                null,
+                "Digite quanto deseja sacar:",
+                "Saque",
+                JOptionPane.QUESTION_MESSAGE
         );
 
         try {
@@ -483,20 +547,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
                 if (Double.parseDouble(valorSaque) > contaLogada.getLimiteSaque()) {
                     String perguntaCor = JOptionPane.showInputDialog(
-                        null,
-                        "Qual a sua cor favorita?",
-                        "Perguntas de seguranca!",
-                        JOptionPane.QUESTION_MESSAGE);
+                            null,
+                            "Qual a sua cor favorita?",
+                            "Perguntas de seguranca!",
+                            JOptionPane.QUESTION_MESSAGE);
                     String perguntaAnimal = JOptionPane.showInputDialog(
-                        null,
-                        "Qual o seu animal favorito?",
-                        "Perguntas de seguranca!",
-                        JOptionPane.QUESTION_MESSAGE);
+                            null,
+                            "Qual o seu animal favorito?",
+                            "Perguntas de seguranca!",
+                            JOptionPane.QUESTION_MESSAGE);
                     String perguntaComida = JOptionPane.showInputDialog(
-                        null,
-                        "Qual a sua comida favorita?",
-                        "Perguntas de seguranca!",
-                        JOptionPane.QUESTION_MESSAGE);
+                            null,
+                            "Qual a sua comida favorita?",
+                            "Perguntas de seguranca!",
+                            JOptionPane.QUESTION_MESSAGE);
 
                     if (contaLogada.perguntaSeguranca(perguntaCor, perguntaAnimal, perguntaComida)) {
                         contaLogada.realizarSaque(Double.parseDouble(valorSaque));
@@ -520,10 +584,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void depositoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_depositoButtonActionPerformed
         String valorDeposito = JOptionPane.showInputDialog(
-            null,
-            "Digite quanto deseja depositar:",
-            "Deposito",
-            JOptionPane.QUESTION_MESSAGE);
+                null,
+                "Digite quanto deseja depositar:",
+                "Deposito",
+                JOptionPane.QUESTION_MESSAGE);
 
         try {
             if (valorDeposito.matches("-?[0-9]*(\\.[0-9]+)?")) {
@@ -552,16 +616,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void emprestimoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emprestimoButtonActionPerformed
         String valorEmprestimo = JOptionPane.showInputDialog(
-            null,
-            "Digite o valor que voce deseja pegar emprestado",
-            "Emprestimo",
-            JOptionPane.QUESTION_MESSAGE);
+                null,
+                "Digite o valor que voce deseja pegar emprestado",
+                "Emprestimo",
+                JOptionPane.QUESTION_MESSAGE);
 
         String numeroDeParcelas = JOptionPane.showInputDialog(
-            null,
-            "Digite quantas parcelas voce quer dividir",
-            "Emprestimo",
-            JOptionPane.QUESTION_MESSAGE);
+                null,
+                "Digite quantas parcelas voce quer dividir",
+                "Emprestimo",
+                JOptionPane.QUESTION_MESSAGE);
 
         try {
             if (valorEmprestimo.matches("-?[0-9]*(\\.[0-9]+)?") && numeroDeParcelas.matches("-?[0-9]*(\\.[0-9]+)?")) {
@@ -583,10 +647,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void boletoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boletoButtonActionPerformed
         String codigoBoleto = JOptionPane.showInputDialog(
-            null,
-            "Digite codigo do boleto",
-            "Boleto",
-            JOptionPane.QUESTION_MESSAGE);
+                null,
+                "Digite codigo do boleto",
+                "Boleto",
+                JOptionPane.QUESTION_MESSAGE);
         try {
             if (codigoBoleto.matches("-?[0-9]*(\\.[0-9]+)?")) {
                 if (Crud.buscarBoleto(codigoBoleto) != null) {
@@ -620,22 +684,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void financiamentoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_financiamentoButtonActionPerformed
         String valorFinanciamento = JOptionPane.showInputDialog(
-            null,
-            "Digite o valor que voce deseja pegar emprestado",
-            "Financiamento",
-            JOptionPane.QUESTION_MESSAGE);
+                null,
+                "Digite o valor que voce deseja pegar emprestado",
+                "Financiamento",
+                JOptionPane.QUESTION_MESSAGE);
 
         String objetoFinanciado = JOptionPane.showInputDialog(
-            null,
-            "Digite o bem que voce dejesa financiar",
-            "Financiamento",
-            JOptionPane.QUESTION_MESSAGE);
+                null,
+                "Digite o bem que voce dejesa financiar",
+                "Financiamento",
+                JOptionPane.QUESTION_MESSAGE);
 
         String numeroDeParcelas = JOptionPane.showInputDialog(
-            null,
-            "Digite quantas parcelas voce quer dividir",
-            "Financiamento",
-            JOptionPane.QUESTION_MESSAGE);
+                null,
+                "Digite quantas parcelas voce quer dividir",
+                "Financiamento",
+                JOptionPane.QUESTION_MESSAGE);
         try {
             if (valorFinanciamento.matches("-?[0-9]*(\\.[0-9]+)?") && numeroDeParcelas.matches("-?[0-9]*(\\.[0-9]+)?")) {
                 try {
@@ -660,16 +724,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void pagarFinanciamentoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagarFinanciamentoButtonActionPerformed
         String codigoFinanciamento = JOptionPane.showInputDialog(
-            null,
-            "Digite codigo do financiamento",
-            "Financiamento",
-            JOptionPane.QUESTION_MESSAGE);
+                null,
+                "Digite codigo do financiamento",
+                "Financiamento",
+                JOptionPane.QUESTION_MESSAGE);
         try {
             if (codigoFinanciamento.matches("-?[0-9]*(\\.[0-9]+)?")) {
                 Financiamento financiamento = Crud.buscarFinanciamento(codigoFinanciamento);
                 if (financiamento != null) {
                     try {
-                        financiamento.pagarParcelaFinanciamento( contaLogada);
+                        financiamento.pagarParcelaFinanciamento(contaLogada);
                         valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
                         JOptionPane.showMessageDialog(null, "Pagamento realizado com sucesso", "Financiamento", JOptionPane.PLAIN_MESSAGE);
                     } catch (Exception ex) {
@@ -689,10 +753,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void pagarEmprestimoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagarEmprestimoButtonActionPerformed
 
         String codigoEmprestimo = JOptionPane.showInputDialog(
-            null,
-            "Digite codigo do emprestimo",
-            "Emprestimo",
-            JOptionPane.QUESTION_MESSAGE);
+                null,
+                "Digite codigo do emprestimo",
+                "Emprestimo",
+                JOptionPane.QUESTION_MESSAGE);
 
         try {
             if (codigoEmprestimo.matches("-?[0-9]*(\\.[0-9]+)?")) {
@@ -723,10 +787,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void cartaoButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartaoButton1ActionPerformed
         String cartao = JOptionPane.showInputDialog(
-            null,
-            "Qual tipo de cartao voce deseja?",
-            "Cartao",
-            JOptionPane.QUESTION_MESSAGE);
+                null,
+                "Qual tipo de cartao voce deseja?",
+                "Cartao",
+                JOptionPane.QUESTION_MESSAGE);
 
         TipoCartao tipoCartao;
 
@@ -745,7 +809,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 } else if (cartao.toUpperCase().equals("DEBITO")) {
                     tipoCartao = TipoCartao.DEBITO;
                     try {
-                        Cartao c = new Cartao(contaLogada.getCliente(),tipoCartao);
+                        Cartao c = new Cartao(contaLogada.getCliente(), tipoCartao);
                         Crud.add(c);
                     } catch (Exception ex) {
                         JOptionPane.showMessageDialog(null, ex.getMessage(), "Erro", JOptionPane.PLAIN_MESSAGE);
@@ -761,10 +825,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void cartaoButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartaoButton2ActionPerformed
         String numeroCartao = JOptionPane.showInputDialog(
-            null,
-            "Digite numero do cartao pagar",
-            "Cartao",
-            JOptionPane.QUESTION_MESSAGE);
+                null,
+                "Digite numero do cartao pagar",
+                "Cartao",
+                JOptionPane.QUESTION_MESSAGE);
         try {
             if (!numeroCartao.isEmpty()) {
                 if (numeroCartao.matches("-?[0-9]*(\\.[0-9]+)?")) {
@@ -792,22 +856,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void cartaoButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartaoButton3ActionPerformed
         String numeroCartao = JOptionPane.showInputDialog(
-            null,
-            "Digite numero do cartao que voce deseja utilizar",
-            "Cartao",
-            JOptionPane.QUESTION_MESSAGE);
+                null,
+                "Digite numero do cartao que voce deseja utilizar",
+                "Cartao",
+                JOptionPane.QUESTION_MESSAGE);
 
         String valor = JOptionPane.showInputDialog(
-            null,
-            "Digite quanto voce deseja gastar",
-            "Cartao",
-            JOptionPane.QUESTION_MESSAGE);
+                null,
+                "Digite quanto voce deseja gastar",
+                "Cartao",
+                JOptionPane.QUESTION_MESSAGE);
 
         String senha = JOptionPane.showInputDialog(
-            null,
-            "Digite a senha do cartao",
-            "Cartao",
-            JOptionPane.QUESTION_MESSAGE);
+                null,
+                "Digite a senha do cartao",
+                "Cartao",
+                JOptionPane.QUESTION_MESSAGE);
         try {
             if (!(valor.isEmpty() || numeroCartao.isEmpty() || senha.isEmpty())) {
                 if (numeroCartao.matches("-?[0-9]*(\\.[0-9]+)?")) {
@@ -823,10 +887,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
                             }
                         } else if (cartao.getTipoCartao().equals(TipoCartao.CREDITO)) {
                             String parcelas = JOptionPane.showInputDialog(
-                                null,
-                                "Digite o numero de parcelas",
-                                "Cartao",
-                                JOptionPane.QUESTION_MESSAGE);
+                                    null,
+                                    "Digite o numero de parcelas",
+                                    "Cartao",
+                                    JOptionPane.QUESTION_MESSAGE);
                             try {
                                 cartao.credito(contaLogada, Double.parseDouble(valor), senha, Integer.parseInt(parcelas));
                                 valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
@@ -851,22 +915,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void senhaLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_senhaLabelMouseClicked
         String senhaAtual = JOptionPane.showInputDialog(
-            null,
-            "Digite a sua senha atual",
-            "Mudar senha",
-            JOptionPane.QUESTION_MESSAGE);
+                null,
+                "Digite a sua senha atual",
+                "Mudar senha",
+                JOptionPane.QUESTION_MESSAGE);
 
         String senhaNova = JOptionPane.showInputDialog(
-            null,
-            "Digite a nova senha que voce deseja colocar",
-            "Mudar senha",
-            JOptionPane.QUESTION_MESSAGE);
+                null,
+                "Digite a nova senha que voce deseja colocar",
+                "Mudar senha",
+                JOptionPane.QUESTION_MESSAGE);
 
         String senhaNova2 = JOptionPane.showInputDialog(
-            null,
-            "Digite mais uma vez para poder confirmar:",
-            "Mudar senha",
-            JOptionPane.QUESTION_MESSAGE);
+                null,
+                "Digite mais uma vez para poder confirmar:",
+                "Mudar senha",
+                JOptionPane.QUESTION_MESSAGE);
 
         try {
             if (senhaNova.equals(senhaNova2)) {
@@ -892,8 +956,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 "EXCLUIR CONTA",
                 JOptionPane.QUESTION_MESSAGE);
 
-        if(senha.equals(contaLogada.getSenha())){
-            try{
+        if (senha.equals(contaLogada.getSenha())) {
+            try {
                 Crud.excluirConta(contaLogada);
 
                 JOptionPane.showMessageDialog(null, "Conta excluida com sucesse!", "Sucesso", JOptionPane.PLAIN_MESSAGE);
@@ -902,80 +966,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 tela.setVisible(true);
                 tela.setLocationRelativeTo(null);
                 this.dispose();
-            }catch (Exception ex){
+            } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage(), "Erro", JOptionPane.PLAIN_MESSAGE);
             }
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "A sua senha esta errada", "Erro", JOptionPane.PLAIN_MESSAGE);
         }
 
 
     }//GEN-LAST:event_jLabel1MouseClicked
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaPrincipal().setVisible(true);
-            }
-        });
-    }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton boletoButton;
-    private javax.swing.JLabel boletoLabel;
-    private javax.swing.JButton cartaoButton1;
-    private javax.swing.JButton cartaoButton2;
-    private javax.swing.JButton cartaoButton3;
-    private javax.swing.JLabel cartaoLabel;
-    private javax.swing.JButton creditoEspecialButton;
-    private javax.swing.JLabel creditoEspecialLabel;
-    private javax.swing.JButton depositoButton;
-    private javax.swing.JLabel depositoLabel;
-    private javax.swing.JButton emprestimoButton;
-    private javax.swing.JLabel emprestimoLabel;
-    private javax.swing.JButton financiamentoButton;
-    private javax.swing.JLabel financiamentoLabel;
-    private javax.swing.JLabel informacoesDoClienteLabel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField nomeDoClienteTextField;
-    private javax.swing.JButton pagarEmprestimoButton;
-    private javax.swing.JButton pagarFinanciamentoButton;
-    private javax.swing.JButton pixButton;
-    private javax.swing.JLabel pixLabel;
-    private javax.swing.JLabel saldoLabel;
-    private javax.swing.JButton saqueButton;
-    private javax.swing.JLabel saqueLabel;
-    private javax.swing.JLabel senhaLabel;
-    private javax.swing.JTextField valorTextField;
     // End of variables declaration//GEN-END:variables
 }

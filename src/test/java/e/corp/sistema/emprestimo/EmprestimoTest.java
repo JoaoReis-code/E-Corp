@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
+import static e.corp.sistema.emprestimo.Emprestimo.calculaJuros;
 import static e.corp.sistema.emprestimo.Emprestimo.validarEmprestimo;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -153,4 +154,68 @@ class EmprestimoTest {
         assertEquals(mensagem, "Voce ja pagou todo o seu emprestimo.");
     }
 
+    @Test
+    @DisplayName("Calcula juros")
+    public void testEmprestimo11(){
+        double valorEsperado = 1.10;
+
+        assertEquals(calculaJuros(10), valorEsperado);
+    }
+
+    @Test
+    @DisplayName("Calcula juros")
+    public void testEmprestimo12(){
+        double valorEsperado = 1.25;
+
+        assertEquals(calculaJuros(25), valorEsperado);
+    }
+    @Test
+    @DisplayName("Calcula juros")
+    public void testEmprestimo13(){
+        double valorEsperado = 2;
+
+        assertEquals(calculaJuros(100), valorEsperado);
+    }@Test
+    @DisplayName("Calcula juros")
+    public void testEmprestimo14(){
+        double valorEsperado = 1.12;
+
+        assertEquals(calculaJuros(12), valorEsperado);
+    }@Test
+    @DisplayName("Calcula juros")
+    public void testEmprestimo15(){
+        double valorEsperado = 1.01;
+
+        assertEquals(calculaJuros(1), valorEsperado);
+    }@Test
+    @DisplayName("Calcula juros")
+    public void testEmprestimo16(){
+        double valorEsperado = 1.3;
+
+        assertEquals(calculaJuros(30), valorEsperado);
+    }@Test
+    @DisplayName("Calcula juros")
+    public void testEmprestimo17(){
+        double valorEsperado = 11;
+
+        assertEquals(calculaJuros(1000), valorEsperado);
+    }@Test
+    @DisplayName("Calcula juros")
+    public void testEmprestimo18(){
+        double valorEsperado = 1.8;
+
+        assertEquals(calculaJuros(80), valorEsperado);
+    }@Test
+    @DisplayName("Calcula juros")
+    public void testEmprestimo19(){
+        double valorEsperado = 1.47;
+
+        assertEquals(calculaJuros(47), valorEsperado);
+    }@Test
+    @DisplayName("Calcula juros")
+    public void testEmprestimo20() {
+        double valorEsperado = 69.69;
+
+        assertEquals(calculaJuros(6869), valorEsperado);
+    }
 }

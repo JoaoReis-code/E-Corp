@@ -8,6 +8,9 @@ import e.corp.sistema.transacao.TipoTransacao;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 import static e.corp.sistema.gerador.GeradorDeCaracteres.gerarNumero;
 
 
@@ -35,7 +38,7 @@ public class Financiamento {
         this.numeroParcelasTotais = numeroParcelas;
         this.objetoFinanciado = objetoFinanciado;
         this.valorTotal = valorTotal;
-        this.valorParcela = valorTotal / numeroParcelas;
+        this.valorParcela = valorTotal * calculaJuros(numeroParcelas) / numeroParcelas;
         this.numeroParcelasRestantes = numeroParcelas;
         this.valorDivida = this.valorParcela * this.numeroParcelasRestantes;
         conta.setExtrato(this.cliente, null, TipoTransacao.FINANCIAMENTO, this.valorParcela);
@@ -44,6 +47,11 @@ public class Financiamento {
 
     public static boolean validarFinanciamento(double rendaMensal, double valorFinanciamento) {
         return ((rendaMensal * 0.2) * 72) > valorFinanciamento;
+    }
+
+    public static double calculaJuros(int numeroParcelas) {
+        double valorJuros = (double) numeroParcelas / 100 + 1.1;
+        return new BigDecimal(valorJuros).setScale(2, RoundingMode.HALF_UP).doubleValue();
     }
 
     public void pagarParcelaFinanciamento(Conta conta) {

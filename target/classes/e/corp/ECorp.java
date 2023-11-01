@@ -5,11 +5,11 @@
 package e.corp;
 
 
+import e.corp.interfaces.TelaLogin;
 import e.corp.sistema.boleto.Boleto;
 import e.corp.sistema.cliente.Cliente;
 import e.corp.sistema.cliente.Sexo;
 import e.corp.sistema.conta.Conta;
-import e.corp.interfaces.TelaLogin;
 import e.corp.sistema.conta.TipoConta;
 import e.corp.sistema.crud.Crud;
 
@@ -40,8 +40,8 @@ public class ECorp {
         String perguntaComida = "macarrao";
         String perguntaAnimal = "cachorro";
 
-        Cliente c = new Cliente(nome, cpf, email, dataNascimento, sexo,rendaMensal);
-        Conta conta = new Conta(c,tipoConta,perguntaCor,perguntaComida,perguntaAnimal);
+        Cliente c = new Cliente(nome, cpf, email, dataNascimento, sexo, rendaMensal);
+        Conta conta = new Conta(c, tipoConta, perguntaCor, perguntaComida, perguntaAnimal);
         conta.setNumeroDaConta("123456");
         conta.setSenha("admin123");
 
@@ -59,8 +59,8 @@ public class ECorp {
         String perguntaCor2 = "azul";
         String perguntaComida2 = "abobora";
         String perguntaAnimal2 = "gato";
-        Cliente c2 = new Cliente(nome, cpf, email, dataNascimento, sexo,rendaMensal);
-        Conta conta2 = new Conta(c,tipoConta,perguntaCor,perguntaComida,perguntaAnimal);
+        Cliente c2 = new Cliente(nome, cpf, email, dataNascimento, sexo, rendaMensal);
+        Conta conta2 = new Conta(c, tipoConta, perguntaCor, perguntaComida, perguntaAnimal);
         conta2.setNumeroDaConta("654321");
         conta2.setSenha("123admin");
         Crud.add(c2);
@@ -68,12 +68,12 @@ public class ECorp {
 
         System.out.println(Crud.contas());
 
-        Boleto boleto1 = new Boleto(LocalDate.of(2024,12,2),1000);
-        Boleto boleto2 = new Boleto(LocalDate.of(2020,12,2),200);
-        Boleto boleto3 = new Boleto(LocalDate.of(2024,12,2),122);
-        Boleto boleto4 = new Boleto(LocalDate.of(2020,12,2),840);
+        Boleto boleto1 = new Boleto(LocalDate.of(2024, 12, 2), 1000);
+        Boleto boleto2 = new Boleto(LocalDate.of(2020, 12, 2), 200);
+        Boleto boleto3 = new Boleto(LocalDate.of(2024, 12, 2), 122);
+        Boleto boleto4 = new Boleto(LocalDate.of(2020, 12, 2), 840);
         boleto4.setPago(true);
-        Boleto boleto5 = new Boleto(LocalDate.of(2024,12,2),20000);
+        Boleto boleto5 = new Boleto(LocalDate.of(2024, 12, 2), 20000);
         Crud.add(boleto1);
         Crud.add(boleto2);
         Crud.add(boleto3);

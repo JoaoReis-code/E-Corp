@@ -431,7 +431,7 @@ class ContaTest {
             mensagem = ex.getMessage();
         }
 
-        assertEquals(mensagem, "Valor nao pode ser menor que 0");
+        assertEquals(mensagem, "Valor não pode ser menor que 0.");
     }
 
     @Test
