@@ -41,6 +41,7 @@ public class Cliente {
         LocalDate dataAtual = LocalDate.now().minusYears(18);
         return dataAtual.isAfter(dataFornecida);
     }
+<<<<<<< HEAD
 
     public static boolean validarCpf(String cpf) {
         return ((cpf.length() == 11) && (cpf.matches("[0-9]*")));
@@ -50,6 +51,14 @@ public class Cliente {
         return (email.indexOf('@') > 0);
     }
 
+=======
+    public static boolean validarCpf(String cpf) {
+        return ((cpf.length() == 11) && (cpf.matches("[0-9]*")));
+    }
+    public static boolean validarEmail(String email) {
+        return (email.indexOf('@') > 0);
+    }
+>>>>>>> d7cca2f838a493a8092535a46097eec0b5b4f41e
     public static boolean validaRendaMensal(double rendaMensal) {
         return (rendaMensal > 0);
     }

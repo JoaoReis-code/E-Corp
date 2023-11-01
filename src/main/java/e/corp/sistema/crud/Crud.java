@@ -25,6 +25,15 @@ public class Crud {
         contas.add(conta);
     }
 
+    public static Conta buscarConta(String numeroConta) {
+        for (Conta conta : contas) {
+            if (conta.getNumeroDaConta().equals(numeroConta)) {
+                return conta;
+            }
+        }
+        return null;
+    }
+
     public static void excluirConta(Conta conta) {
         if (conta.getSaldo() >= 0) {
             contas.remove(conta);
@@ -35,16 +44,6 @@ public class Crud {
 
     public static List<Conta> contas() {
         return contas;
-    }
-
-
-    public static Conta buscarConta(String numeroConta) {
-        for (Conta conta : contas) {
-            if (conta.getNumeroDaConta().equals(numeroConta)) {
-                return conta;
-            }
-        }
-        return null;
     }
 
     public static void add(Cliente cliente) {

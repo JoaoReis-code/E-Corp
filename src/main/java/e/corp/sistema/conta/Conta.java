@@ -35,7 +35,8 @@ public class Conta {
     private double limiteCreditoEspecial;
     private double saldo;
 
-    public Conta(Cliente cliente, TipoConta tipoConta, String perguntasCor, String perguntasComida, String perguntasAnimal) {
+    public Conta(Cliente cliente, TipoConta tipoConta, String perguntasCor,
+                 String perguntasComida, String perguntasAnimal) {
 
         this.cliente = cliente;
         this.tipoConta = tipoConta;
@@ -93,6 +94,29 @@ public class Conta {
         }
     }
 
+    public void pagarBoleto(Boleto boleto) {
+        if (boleto.getValor() > this.saldo) {
+            throw new OperacaoInvalidaException("Voce nao possui saldo suficiente.");
+        } else if (boleto.getVencimento().isBefore(LocalDate.now())) {
+            throw new OperacaoInvalidaException("Esse boleto ja esta vencido.");
+        } else if (boleto.isPago()) {
+            throw new OperacaoInvalidaException("Esse boleto ja foi pago.");
+        }
+        this.extrato.add(new Transacao(this.cliente, null, TipoTransacao.BOLETO, boleto.getValor()));
+        this.saldo -= boleto.getValor();
+        boleto.setPago(true);
+    }
+
+    public void creditoEspecial() {
+
+        if (!(this.saldo == 0)) {
+            throw new OperacaoInvalidaException("Voce so pode usar o credito especial quando esta com exastos 0 R$.");
+        }
+
+        this.extrato.add(new Transacao(this.cliente, null, TipoTransacao.CREDITOESPECIAL, limiteCreditoEspecial));
+        this.saldo -= limiteCreditoEspecial;
+    }
+
     public List<Transacao> visualizarExtrato() {
         return this.extrato;
     }
@@ -107,16 +131,6 @@ public class Conta {
         this.senha = senhaNova;
     }
 
-    public void creditoEspecial() {
-
-        if (!(this.saldo == 0)) {
-            throw new OperacaoInvalidaException("Voce so pode usar o credito especial quando esta com exastos 0 R$.");
-        }
-
-        this.extrato.add(new Transacao(this.cliente, null, TipoTransacao.CREDITOESPECIAL, limiteCreditoEspecial));
-        this.saldo -= limiteCreditoEspecial;
-    }
-
     public boolean perguntaSeguranca(String perguntaAnimal, String perguntaCor, String perguntaComida) {
 
         if (!(perguntaCor.equals(this.perguntaCor) && perguntaAnimal.equals(this.perguntaAnimal) && perguntaComida.equals(this.perguntaComida))) {
@@ -124,19 +138,6 @@ public class Conta {
         } else {
             return true;
         }
-    }
-
-    public void pagarBoleto(Boleto boleto) {
-        if (boleto.getValor() > this.saldo) {
-            throw new OperacaoInvalidaException("Voce nao possui saldo suficiente.");
-        } else if (boleto.getVencimento().isBefore(LocalDate.now())) {
-            throw new OperacaoInvalidaException("Esse boleto ja esta vencido.");
-        } else if (boleto.isPago()) {
-            throw new OperacaoInvalidaException("Esse boleto ja foi pago.");
-        }
-        this.extrato.add(new Transacao(this.cliente, null, TipoTransacao.BOLETO, boleto.getValor()));
-        this.saldo -= boleto.getValor();
-        boleto.setPago(true);
     }
 
     public void setExtrato(Cliente clienteRemetente, Cliente clienteDestinatario, TipoTransacao tipoTransacao, double valor) {

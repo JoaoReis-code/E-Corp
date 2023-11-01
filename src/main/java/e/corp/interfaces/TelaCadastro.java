@@ -11,7 +11,6 @@ import e.corp.sistema.conta.TipoConta;
 import e.corp.sistema.crud.Crud;
 
 import javax.swing.*;
-import java.awt.*;
 import java.time.LocalDate;
 
 import static e.corp.ECorp.contaLogada;
@@ -64,6 +63,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     private javax.swing.JTextField rendaTextField;
     private javax.swing.JLabel sexoLabel;
     private javax.swing.JLabel tipoContaLabel;
+
     /**
      * Creates new form TelaCadastro
      */
@@ -482,6 +482,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                 dia.isEmpty() || animalFavorito.isEmpty() ||
                 comidaFavorita.isEmpty() || corFavorita.isEmpty() ||
                 sexo == null || tipoConta == null) {
+
             JOptionPane.showMessageDialog(null, "Todos os campos precisam estar preenchidos");
         } else {
             try {
@@ -500,7 +501,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                 tela.setLocationRelativeTo(null);
                 this.dispose();
 
-            } catch (HeadlessException | NumberFormatException ex) {
+            } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage());
             }
         }

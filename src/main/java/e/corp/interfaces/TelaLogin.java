@@ -28,6 +28,7 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JButton loginButton;
     private javax.swing.JTextField numeroDaContaTextField;
     private javax.swing.JPasswordField senhaTextField;
+
     /**
      * Creates new form fdknfkg
      */

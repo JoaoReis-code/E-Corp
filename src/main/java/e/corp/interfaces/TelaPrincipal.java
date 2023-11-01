@@ -49,6 +49,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel saqueLabel;
     private javax.swing.JLabel senhaLabel;
     private javax.swing.JTextField valorTextField;
+
     /**
      * Creates new form TelaPrincipal
      */
@@ -892,7 +893,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                     "Cartao",
                                     JOptionPane.QUESTION_MESSAGE);
                             try {
-                                cartao.credito(contaLogada, Double.parseDouble(valor), senha, Integer.parseInt(parcelas));
+                                cartao.credito(Double.parseDouble(valor), senha, Integer.parseInt(parcelas));
                                 valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
                                 JOptionPane.showMessageDialog(null, "Pagamento realizado com sucesso", "Cartao", JOptionPane.PLAIN_MESSAGE);
                             } catch (Exception ex) {

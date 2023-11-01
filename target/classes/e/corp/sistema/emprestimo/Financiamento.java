@@ -7,9 +7,12 @@ import e.corp.sistema.exception.OperacaoInvalidaException;
 import e.corp.sistema.transacao.TipoTransacao;
 import lombok.Getter;
 import lombok.Setter;
+<<<<<<< HEAD
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+=======
+>>>>>>> d7cca2f838a493a8092535a46097eec0b5b4f41e
 
 import static e.corp.sistema.gerador.GeradorDeCaracteres.gerarNumero;
 
@@ -49,11 +52,14 @@ public class Financiamento {
         return ((rendaMensal * 0.2) * 72) > valorFinanciamento;
     }
 
+<<<<<<< HEAD
     public static double calculaJuros(int numeroParcelas) {
         double valorJuros = (double) numeroParcelas / 100 + 1.1;
         return new BigDecimal(valorJuros).setScale(2, RoundingMode.HALF_UP).doubleValue();
     }
 
+=======
+>>>>>>> d7cca2f838a493a8092535a46097eec0b5b4f41e
     public void pagarParcelaFinanciamento(Conta conta) {
         if (this.valorParcela > conta.getSaldo()) {
             throw new OperacaoInvalidaException("Voce nao possui esse valor.");

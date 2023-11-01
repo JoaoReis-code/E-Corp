@@ -20,7 +20,11 @@ public class Boleto {
 
     public Boleto(LocalDate vencimento, double valor) {
         if (!validaValor(valor)) {
+<<<<<<< HEAD
             throw new ValidacaoException("Valor não pode ser menor que 0.");
+=======
+            throw new ValidacaoException("Valor nao pode ser menor que 0");
+>>>>>>> d7cca2f838a493a8092535a46097eec0b5b4f41e
         }
 
         this.codigo = GeradorDeCaracteres.gerarNumero(48);

@@ -7,9 +7,12 @@ import e.corp.sistema.exception.OperacaoInvalidaException;
 import e.corp.sistema.transacao.TipoTransacao;
 import lombok.Getter;
 import lombok.Setter;
+<<<<<<< HEAD
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+=======
+>>>>>>> d7cca2f838a493a8092535a46097eec0b5b4f41e
 
 import static e.corp.sistema.gerador.GeradorDeCaracteres.gerarNumero;
 
@@ -42,6 +45,7 @@ public class Emprestimo {
         conta.setSaldo(conta.getSaldo() + valorTotal);
     }
 
+<<<<<<< HEAD
     public static boolean validarEmprestimo(double rendaMensal, double valorEmprestimo) {
         return ((rendaMensal * 0.3) * 24) > valorEmprestimo;
     }
@@ -51,6 +55,13 @@ public class Emprestimo {
         return new BigDecimal(valorJuros).setScale(2, RoundingMode.HALF_UP).doubleValue();
     }
 
+=======
+    public static boolean validarEmprestimo(double rendaMensal,
+                                            double valorEmprestimo) {
+        return ((rendaMensal * 0.3) * 24) > valorEmprestimo;
+    }
+
+>>>>>>> d7cca2f838a493a8092535a46097eec0b5b4f41e
     public void pagarParcelaEmprestimo(Conta conta) {
         if (this.valorParcela > conta.getSaldo()) {
             throw new OperacaoInvalidaException("Voce nao possui esse valor.");
