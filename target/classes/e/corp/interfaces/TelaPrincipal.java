@@ -18,8 +18,7 @@ import static e.corp.ECorp.contaLogada;
  * @author Jz
  */
 public class TelaPrincipal extends javax.swing.JFrame {
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+                
     private javax.swing.JButton boletoButton;
     private javax.swing.JLabel boletoLabel;
     private javax.swing.JButton cartaoButton1;
@@ -49,13 +48,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel saqueLabel;
     private javax.swing.JLabel senhaLabel;
     private javax.swing.JTextField valorTextField;
+
     /**
      * Creates new form TelaPrincipal
      */
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     public TelaPrincipal() {
         initComponents();
         this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/icone.png")).getImage());
-    }
+    }// </editor-fold>//GEN-END:initComponents
 
     /**
      * @param args the command line arguments
@@ -481,7 +482,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void informacoesDoClienteLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_informacoesDoClienteLabelMouseClicked
-        JOptionPane.showMessageDialog(null, contaLogada.getCliente().toString(), "Dados do cliente", JOptionPane.PLAIN_MESSAGE);
+        JOptionPane.showMessageDialog(null, contaLogada.getCliente().toString() + "Senha da conta: " +
+                contaLogada.getSenha(), "Dados do cliente", JOptionPane.PLAIN_MESSAGE);
     }//GEN-LAST:event_informacoesDoClienteLabelMouseClicked
 
     private void saldoLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saldoLabelMouseClicked
@@ -975,5 +977,5 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jLabel1MouseClicked
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }

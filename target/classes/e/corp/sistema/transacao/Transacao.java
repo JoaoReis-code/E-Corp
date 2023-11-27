@@ -18,13 +18,9 @@ public class Transacao {
     private double valor;
     private LocalDate data;
 
-<<<<<<< HEAD
-    public Transacao(Cliente clienteRemetente, Cliente clienteDestinatario, TipoTransacao tipoTransacao, double valor) {
-=======
     public Transacao(Cliente clienteRemetente,
                      Cliente clienteDestinatario,
                      TipoTransacao tipoTransacao, double valor) {
->>>>>>> d7cca2f838a493a8092535a46097eec0b5b4f41e
         id++;
         this.clienteRemetente = clienteRemetente;
         this.clienteDestinatario = clienteDestinatario;

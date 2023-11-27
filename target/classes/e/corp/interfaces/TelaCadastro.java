@@ -11,7 +11,6 @@ import e.corp.sistema.conta.TipoConta;
 import e.corp.sistema.crud.Crud;
 
 import javax.swing.*;
-import java.awt.*;
 import java.time.LocalDate;
 
 import static e.corp.ECorp.contaLogada;
@@ -64,6 +63,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     private javax.swing.JTextField rendaTextField;
     private javax.swing.JLabel sexoLabel;
     private javax.swing.JLabel tipoContaLabel;
+
     /**
      * Creates new form TelaCadastro
      */
@@ -482,17 +482,8 @@ public class TelaCadastro extends javax.swing.JFrame {
                 dia.isEmpty() || animalFavorito.isEmpty() ||
                 comidaFavorita.isEmpty() || corFavorita.isEmpty() ||
                 sexo == null || tipoConta == null) {
-<<<<<<< HEAD
-=======
 
->>>>>>> d7cca2f838a493a8092535a46097eec0b5b4f41e
             JOptionPane.showMessageDialog(null, "Todos os campos precisam estar preenchidos");
-
-            TelaLogin tela = new TelaLogin();
-            tela.setVisible(true);
-            tela.setLocationRelativeTo(null);
-            this.dispose();
-
         } else {
             try {
                 LocalDate dataNascimento = LocalDate.of(Integer.parseInt(ano), Integer.parseInt(mes), Integer.parseInt(dia));
