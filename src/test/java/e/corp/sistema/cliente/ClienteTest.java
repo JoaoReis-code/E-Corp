@@ -35,7 +35,7 @@ class ClienteTest {
     @Test
     @DisplayName("Valida idade muito maior que 18")
     public void testValidarIdade04() {
-        assertTrue(validarIdade(LocalDate.now().minusYears(330)));
+        assertTrue(validarIdade(LocalDate.now().minusYears(149)));
     }
 
     @Test

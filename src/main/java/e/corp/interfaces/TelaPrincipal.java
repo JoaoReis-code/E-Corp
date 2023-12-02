@@ -4,93 +4,25 @@
  */
 package e.corp.interfaces;
 
+import static e.corp.ECorp.contaLogada;
 import e.corp.sistema.cartao.Cartao;
 import e.corp.sistema.cartao.TipoCartao;
 import e.corp.sistema.crud.Crud;
 import e.corp.sistema.emprestimo.Emprestimo;
 import e.corp.sistema.emprestimo.Financiamento;
-
-import javax.swing.*;
-
-import static e.corp.ECorp.contaLogada;
+import javax.swing.JOptionPane;
 
 /**
- * @author Jz
+ *
+ * @author jz
  */
 public class TelaPrincipal extends javax.swing.JFrame {
-                
-    private javax.swing.JButton boletoButton;
-    private javax.swing.JLabel boletoLabel;
-    private javax.swing.JButton cartaoButton1;
-    private javax.swing.JButton cartaoButton2;
-    private javax.swing.JButton cartaoButton3;
-    private javax.swing.JLabel cartaoLabel;
-    private javax.swing.JButton creditoEspecialButton;
-    private javax.swing.JLabel creditoEspecialLabel;
-    private javax.swing.JButton depositoButton;
-    private javax.swing.JLabel depositoLabel;
-    private javax.swing.JButton emprestimoButton;
-    private javax.swing.JLabel emprestimoLabel;
-    private javax.swing.JButton financiamentoButton;
-    private javax.swing.JLabel financiamentoLabel;
-    private javax.swing.JLabel informacoesDoClienteLabel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField nomeDoClienteTextField;
-    private javax.swing.JButton pagarEmprestimoButton;
-    private javax.swing.JButton pagarFinanciamentoButton;
-    private javax.swing.JButton pixButton;
-    private javax.swing.JLabel pixLabel;
-    private javax.swing.JLabel saldoLabel;
-    private javax.swing.JButton saqueButton;
-    private javax.swing.JLabel saqueLabel;
-    private javax.swing.JLabel senhaLabel;
-    private javax.swing.JTextField valorTextField;
 
     /**
-     * Creates new form TelaPrincipal
+     * Creates new form TelaPrinciipal
      */
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     public TelaPrincipal() {
         initComponents();
-        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/icone.png")).getImage());
-    }// </editor-fold>//GEN-END:initComponents
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaPrincipal().setVisible(true);
-            }
-        });
     }
 
     /**
@@ -102,522 +34,541 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel16 = new javax.swing.JLabel();
+        jButton25 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        informacoesDoClienteLabel = new javax.swing.JLabel();
-        nomeDoClienteTextField = new javax.swing.JTextField();
-        saldoLabel = new javax.swing.JLabel();
-        valorTextField = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        pixButton = new javax.swing.JButton();
-        saqueLabel = new javax.swing.JLabel();
-        depositoLabel = new javax.swing.JLabel();
-        pixLabel = new javax.swing.JLabel();
-        saqueButton = new javax.swing.JButton();
-        depositoButton = new javax.swing.JButton();
-        emprestimoLabel = new javax.swing.JLabel();
-        boletoLabel = new javax.swing.JLabel();
-        creditoEspecialLabel = new javax.swing.JLabel();
-        emprestimoButton = new javax.swing.JButton();
-        boletoButton = new javax.swing.JButton();
-        creditoEspecialButton = new javax.swing.JButton();
-        financiamentoButton = new javax.swing.JButton();
-        financiamentoLabel = new javax.swing.JLabel();
-        pagarFinanciamentoButton = new javax.swing.JButton();
-        pagarEmprestimoButton = new javax.swing.JButton();
-        cartaoLabel = new javax.swing.JLabel();
-        cartaoButton1 = new javax.swing.JButton();
-        cartaoButton2 = new javax.swing.JButton();
-        cartaoButton3 = new javax.swing.JButton();
-        senhaLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        valorTextField = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jButton14 = new javax.swing.JButton();
+        jButton23 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
+        jButton26 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        jButton19 = new javax.swing.JButton();
+        jButton20 = new javax.swing.JButton();
+        jButton21 = new javax.swing.JButton();
+        jButton22 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton24 = new javax.swing.JButton();
+
+        jLabel16.setText("jLabel16");
+
+        jButton25.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton25.setText("Info");
+        jButton25.setPreferredSize(new java.awt.Dimension(140, 25));
+        jButton25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton25ActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("E-Corp");
-        setMinimumSize(new java.awt.Dimension(800, 500));
+        setPreferredSize(new java.awt.Dimension(800, 500));
+        setResizable(false);
+        getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(248, 248, 255));
-        jPanel1.setForeground(new java.awt.Color(248, 248, 255));
-        jPanel1.setToolTipText("");
-        jPanel1.setLayout(null);
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
-
-        informacoesDoClienteLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/clienteImagem.png"))); // NOI18N
-        informacoesDoClienteLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        informacoesDoClienteLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                informacoesDoClienteLabelMouseClicked(evt);
-            }
-        });
-
-        nomeDoClienteTextField.setEditable(false);
-        nomeDoClienteTextField.setBackground(new java.awt.Color(0, 0, 0));
-        nomeDoClienteTextField.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        nomeDoClienteTextField.setForeground(new java.awt.Color(248, 248, 255));
-        nomeDoClienteTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        nomeDoClienteTextField.setText(contaLogada.getCliente().getNome());
-        nomeDoClienteTextField.setBorder(null);
-
-        saldoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/dinehrio.png"))); // NOI18N
-        saldoLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        saldoLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                saldoLabelMouseClicked(evt);
-            }
-        });
-
-        valorTextField.setEditable(false);
-        valorTextField.setBackground(new java.awt.Color(0, 0, 0));
-        valorTextField.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        valorTextField.setForeground(new java.awt.Color(248, 248, 255));
-        valorTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
-        valorTextField.setBorder(null);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/logout.png"))); // NOI18N
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(saldoLabel)
-                                                        .addComponent(informacoesDoClienteLabel))
-                                                .addContainerGap(129, Short.MAX_VALUE))
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                                .addComponent(valorTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                                                .addComponent(nomeDoClienteTextField, javax.swing.GroupLayout.Alignment.LEADING))
-                                                        .addComponent(jLabel2))
-                                                .addGap(0, 0, Short.MAX_VALUE))))
-        );
-        jPanel2Layout.setVerticalGroup(
-                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(informacoesDoClienteLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nomeDoClienteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(19, 19, 19)
-                                .addComponent(saldoLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(valorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
-                                .addComponent(jLabel2)
-                                .addGap(15, 15, 15))
-        );
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 210, 498);
-
-        pixButton.setBackground(new java.awt.Color(0, 0, 0));
-        pixButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        pixButton.setForeground(new java.awt.Color(248, 248, 255));
-        pixButton.setText("PIX");
-        pixButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pixButtonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(pixButton);
-        pixButton.setBounds(600, 290, 150, 25);
-
-        saqueLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/saque.png"))); // NOI18N
-        saqueLabel.setText("jLabel5");
-        saqueLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        saqueLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                saqueLabelMouseClicked(evt);
-            }
-        });
-        jPanel1.add(saqueLabel);
-        saqueLabel.setBounds(260, 350, 75, 75);
-
-        depositoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/deposito.png"))); // NOI18N
-        depositoLabel.setText("jLabel7");
-        depositoLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.add(depositoLabel);
-        depositoLabel.setBounds(450, 350, 75, 75);
-
-        pixLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/logo-pix.png"))); // NOI18N
-        pixLabel.setText("jLabel6");
-        pixLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        pixLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pixLabelMouseClicked(evt);
-            }
-        });
-        jPanel1.add(pixLabel);
-        pixLabel.setBounds(640, 210, 75, 75);
-
-        saqueButton.setBackground(new java.awt.Color(0, 0, 0));
-        saqueButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        saqueButton.setForeground(new java.awt.Color(248, 248, 255));
-        saqueButton.setText("Saque");
-        saqueButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saqueButtonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(saqueButton);
-        saqueButton.setBounds(230, 430, 150, 25);
-
-        depositoButton.setBackground(new java.awt.Color(0, 0, 0));
-        depositoButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        depositoButton.setForeground(new java.awt.Color(248, 248, 255));
-        depositoButton.setText("Deposito");
-        depositoButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                depositoButtonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(depositoButton);
-        depositoButton.setBounds(410, 430, 150, 25);
-
-        emprestimoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/emprestimo.png"))); // NOI18N
-        emprestimoLabel.setText("jLabel3");
-        emprestimoLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        emprestimoLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                emprestimoLabelMouseClicked(evt);
-            }
-        });
-        jPanel1.add(emprestimoLabel);
-        emprestimoLabel.setBounds(270, 30, 75, 75);
-
-        boletoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/boleto.png"))); // NOI18N
-        boletoLabel.setText("jLabel8");
-        boletoLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        boletoLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                boletoLabelMouseClicked(evt);
-            }
-        });
-        jPanel1.add(boletoLabel);
-        boletoLabel.setBounds(460, 220, 75, 75);
-
-        creditoEspecialLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/credito-especial.png"))); // NOI18N
-        creditoEspecialLabel.setText("jLabel9");
-        creditoEspecialLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        creditoEspecialLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                creditoEspecialLabelMouseClicked(evt);
-            }
-        });
-        jPanel1.add(creditoEspecialLabel);
-        creditoEspecialLabel.setBounds(260, 210, 75, 75);
-
-        emprestimoButton.setBackground(new java.awt.Color(0, 0, 0));
-        emprestimoButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        emprestimoButton.setForeground(new java.awt.Color(248, 248, 255));
-        emprestimoButton.setText("Emprestimo");
-        emprestimoButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emprestimoButtonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(emprestimoButton);
-        emprestimoButton.setBounds(230, 110, 150, 25);
-
-        boletoButton.setBackground(new java.awt.Color(0, 0, 0));
-        boletoButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        boletoButton.setForeground(new java.awt.Color(248, 248, 255));
-        boletoButton.setText("Boleto");
-        boletoButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boletoButtonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(boletoButton);
-        boletoButton.setBounds(420, 290, 150, 25);
-
-        creditoEspecialButton.setBackground(new java.awt.Color(0, 0, 0));
-        creditoEspecialButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        creditoEspecialButton.setForeground(new java.awt.Color(248, 248, 255));
-        creditoEspecialButton.setText("Credito ");
-        creditoEspecialButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                creditoEspecialButtonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(creditoEspecialButton);
-        creditoEspecialButton.setBounds(220, 290, 150, 25);
-
-        financiamentoButton.setBackground(new java.awt.Color(0, 0, 0));
-        financiamentoButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        financiamentoButton.setForeground(new java.awt.Color(248, 248, 255));
-        financiamentoButton.setText("Financiamento");
-        financiamentoButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                financiamentoButtonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(financiamentoButton);
-        financiamentoButton.setBounds(410, 110, 150, 25);
-
-        financiamentoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/financiamento.png"))); // NOI18N
-        financiamentoLabel.setText("jLabel2");
-        financiamentoLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        financiamentoLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                financiamentoLabelMouseClicked(evt);
-            }
-        });
-        jPanel1.add(financiamentoLabel);
-        financiamentoLabel.setBounds(450, 30, 75, 75);
-
-        pagarFinanciamentoButton.setBackground(new java.awt.Color(0, 0, 0));
-        pagarFinanciamentoButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        pagarFinanciamentoButton.setForeground(new java.awt.Color(248, 248, 255));
-        pagarFinanciamentoButton.setText("Pagar ");
-        pagarFinanciamentoButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pagarFinanciamentoButtonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(pagarFinanciamentoButton);
-        pagarFinanciamentoButton.setBounds(410, 140, 150, 25);
-
-        pagarEmprestimoButton.setBackground(new java.awt.Color(0, 0, 0));
-        pagarEmprestimoButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        pagarEmprestimoButton.setForeground(new java.awt.Color(248, 248, 255));
-        pagarEmprestimoButton.setText("Pagar ");
-        pagarEmprestimoButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pagarEmprestimoButtonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(pagarEmprestimoButton);
-        pagarEmprestimoButton.setBounds(230, 140, 150, 25);
-
-        cartaoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/cartao.png"))); // NOI18N
-        cartaoLabel.setText("jLabel2");
-        cartaoLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cartaoLabelMouseClicked(evt);
-            }
-        });
-        jPanel1.add(cartaoLabel);
-        cartaoLabel.setBounds(640, 30, 75, 75);
-
-        cartaoButton1.setBackground(new java.awt.Color(0, 0, 0));
-        cartaoButton1.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        cartaoButton1.setForeground(new java.awt.Color(248, 248, 255));
-        cartaoButton1.setText("Cartao");
-        cartaoButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cartaoButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(cartaoButton1);
-        cartaoButton1.setBounds(600, 110, 160, 26);
-
-        cartaoButton2.setBackground(new java.awt.Color(0, 0, 0));
-        cartaoButton2.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        cartaoButton2.setForeground(new java.awt.Color(248, 248, 255));
-        cartaoButton2.setText("Pagar");
-        cartaoButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cartaoButton2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(cartaoButton2);
-        cartaoButton2.setBounds(600, 140, 80, 26);
-
-        cartaoButton3.setBackground(new java.awt.Color(0, 0, 0));
-        cartaoButton3.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        cartaoButton3.setForeground(new java.awt.Color(248, 248, 255));
-        cartaoButton3.setText("Usar");
-        cartaoButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cartaoButton3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(cartaoButton3);
-        cartaoButton3.setBounds(680, 140, 80, 26);
-
-        senhaLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/senha.png"))); // NOI18N
-        senhaLabel.setText("jLabel3");
-        senhaLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                senhaLabelMouseClicked(evt);
-            }
-        });
-        jPanel1.add(senhaLabel);
-        senhaLabel.setBounds(610, 410, 75, 75);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/chis.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/clienteImagem.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+        jLabel1.setPreferredSize(new java.awt.Dimension(75, 75));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/dinehrio.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jLabel2.setPreferredSize(new java.awt.Dimension(75, 75));
+
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText(contaLogada.getCliente().getNome());
+
+        valorTextField.setForeground(new java.awt.Color(255, 255, 255));
+        valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/logout.png"))); // NOI18N
+        jLabel6.setText("jLabel6");
+        jLabel6.setPreferredSize(new java.awt.Dimension(75, 75));
+
+        jButton14.setBackground(new java.awt.Color(255, 255, 254));
+        jButton14.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton14.setText("Info");
+        jButton14.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton14.setPreferredSize(new java.awt.Dimension(140, 25));
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
             }
         });
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(710, 410, 75, 75);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+        jButton23.setBackground(new java.awt.Color(255, 255, 254));
+        jButton23.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton23.setText("Info");
+        jButton23.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton23.setPreferredSize(new java.awt.Dimension(140, 25));
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton23ActionPerformed(evt);
+            }
+        });
+
+        jButton18.setBackground(new java.awt.Color(255, 255, 254));
+        jButton18.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton18.setText("Sair");
+        jButton18.setPreferredSize(new java.awt.Dimension(140, 25));
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
+
+        jButton26.setBackground(new java.awt.Color(255, 255, 254));
+        jButton26.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton26.setText("Info Cartao");
+        jButton26.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton26.setPreferredSize(new java.awt.Dimension(140, 25));
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton26ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(valorTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(17, 17, 17)
+                            .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(2, 2, 2)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(valorTextField)
+                .addGap(37, 37, 37)
+                .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(61, 61, 61))
         );
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 170, 555);
+
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Emprestimo");
+        jButton1.setPreferredSize(new java.awt.Dimension(140, 25));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(180, 100, 170, 25);
+
+        jButton3.setBackground(new java.awt.Color(0, 0, 0));
+        jButton3.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("Pagar");
+        jButton3.setPreferredSize(new java.awt.Dimension(140, 25));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(180, 130, 80, 25);
+
+        jButton4.setBackground(new java.awt.Color(0, 0, 0));
+        jButton4.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Credito");
+        jButton4.setPreferredSize(new java.awt.Dimension(140, 25));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4);
+        jButton4.setBounds(190, 270, 150, 25);
+
+        jButton5.setBackground(new java.awt.Color(0, 0, 0));
+        jButton5.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("Info");
+        jButton5.setPreferredSize(new java.awt.Dimension(140, 25));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5);
+        jButton5.setBounds(190, 300, 150, 25);
+
+        jButton6.setBackground(new java.awt.Color(0, 0, 0));
+        jButton6.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setText("Info");
+        jButton6.setPreferredSize(new java.awt.Dimension(140, 25));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton6);
+        jButton6.setBounds(400, 300, 150, 25);
+
+        jButton7.setText("jButton7");
+        jButton7.setPreferredSize(new java.awt.Dimension(140, 25));
+        getContentPane().add(jButton7);
+        jButton7.setBounds(191, 524, 140, 25);
+
+        jButton8.setBackground(new java.awt.Color(0, 0, 0));
+        jButton8.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setText("Financiamento");
+        jButton8.setPreferredSize(new java.awt.Dimension(140, 25));
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton8);
+        jButton8.setBounds(390, 100, 170, 25);
+
+        jButton12.setBackground(new java.awt.Color(0, 0, 0));
+        jButton12.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton12.setForeground(new java.awt.Color(255, 255, 255));
+        jButton12.setText("Cartao");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton12);
+        jButton12.setBounds(600, 100, 170, 24);
+
+        jButton13.setBackground(new java.awt.Color(0, 0, 0));
+        jButton13.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton13.setForeground(new java.awt.Color(255, 255, 255));
+        jButton13.setText("Boleto");
+        jButton13.setPreferredSize(new java.awt.Dimension(140, 25));
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton13);
+        jButton13.setBounds(190, 420, 150, 25);
+
+        jButton15.setBackground(new java.awt.Color(0, 0, 0));
+        jButton15.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton15.setForeground(new java.awt.Color(255, 255, 255));
+        jButton15.setText("Pix");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton15);
+        jButton15.setBounds(610, 270, 150, 24);
+
+        jButton16.setBackground(new java.awt.Color(0, 0, 0));
+        jButton16.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton16.setForeground(new java.awt.Color(255, 255, 255));
+        jButton16.setText("Info");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton16);
+        jButton16.setBounds(610, 300, 150, 24);
+
+        jButton17.setBackground(new java.awt.Color(0, 0, 0));
+        jButton17.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton17.setForeground(new java.awt.Color(255, 255, 255));
+        jButton17.setText("Deposito");
+        jButton17.setPreferredSize(new java.awt.Dimension(140, 25));
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton17);
+        jButton17.setBounds(400, 420, 150, 25);
+
+        jButton19.setBackground(new java.awt.Color(0, 0, 0));
+        jButton19.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton19.setForeground(new java.awt.Color(255, 255, 255));
+        jButton19.setText("Pagar");
+        jButton19.setPreferredSize(new java.awt.Dimension(140, 25));
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton19);
+        jButton19.setBounds(390, 130, 80, 25);
+
+        jButton20.setBackground(new java.awt.Color(0, 0, 0));
+        jButton20.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton20.setForeground(new java.awt.Color(255, 255, 255));
+        jButton20.setText("Info");
+        jButton20.setPreferredSize(new java.awt.Dimension(140, 25));
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton20);
+        jButton20.setBounds(480, 130, 80, 25);
+
+        jButton21.setBackground(new java.awt.Color(0, 0, 0));
+        jButton21.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton21.setForeground(new java.awt.Color(255, 255, 255));
+        jButton21.setText("Pagar");
+        jButton21.setPreferredSize(new java.awt.Dimension(140, 25));
+        jButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton21ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton21);
+        jButton21.setBounds(600, 130, 80, 25);
+
+        jButton22.setBackground(new java.awt.Color(0, 0, 0));
+        jButton22.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton22.setForeground(new java.awt.Color(255, 255, 255));
+        jButton22.setText("Usar");
+        jButton22.setPreferredSize(new java.awt.Dimension(140, 25));
+        jButton22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton22ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton22);
+        jButton22.setBounds(690, 130, 80, 25);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/emprestimo.png"))); // NOI18N
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(220, 20, 75, 75);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/financiamento.png"))); // NOI18N
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(440, 20, 75, 75);
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/cartao.png"))); // NOI18N
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(650, 20, 75, 75);
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/credito-especial.png"))); // NOI18N
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(230, 180, 75, 75);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/boleto.png"))); // NOI18N
+        jLabel8.setPreferredSize(new java.awt.Dimension(75, 75));
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(230, 350, 75, 75);
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/logo-pix.png"))); // NOI18N
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(650, 190, 75, 75);
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/saque.png"))); // NOI18N
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(440, 190, 75, 75);
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/deposito.png"))); // NOI18N
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(440, 340, 75, 75);
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/senha.png"))); // NOI18N
+        jLabel14.setText("jLabel14");
+        jLabel14.setPreferredSize(new java.awt.Dimension(75, 75));
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(580, 400, 75, 75);
+        jLabel14.getAccessibleContext().setAccessibleName("");
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/e/corp/interfaces/imagens/chis.png"))); // NOI18N
+        jLabel15.setText("jLabel15");
+        jLabel15.setPreferredSize(new java.awt.Dimension(75, 75));
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(710, 390, 75, 75);
+        jLabel15.getAccessibleContext().setAccessibleName("");
+
+        jButton9.setBackground(new java.awt.Color(0, 0, 0));
+        jButton9.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(255, 255, 255));
+        jButton9.setText("Trocar Senha");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton9);
+        jButton9.setBounds(541, 470, 150, 24);
+
+        jButton10.setBackground(new java.awt.Color(0, 0, 0));
+        jButton10.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(255, 255, 255));
+        jButton10.setText("Excluir");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton10);
+        jButton10.setBounds(700, 470, 92, 24);
+
+        jButton11.setBackground(new java.awt.Color(0, 0, 0));
+        jButton11.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton11.setForeground(new java.awt.Color(255, 255, 255));
+        jButton11.setText("Saque");
+        jButton11.setPreferredSize(new java.awt.Dimension(140, 25));
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton11);
+        jButton11.setBounds(400, 270, 150, 25);
+
+        jButton24.setBackground(new java.awt.Color(0, 0, 0));
+        jButton24.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jButton24.setForeground(new java.awt.Color(255, 255, 255));
+        jButton24.setText("Info");
+        jButton24.setPreferredSize(new java.awt.Dimension(140, 25));
+        jButton24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton24ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton24);
+        jButton24.setBounds(270, 130, 80, 25);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void informacoesDoClienteLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_informacoesDoClienteLabelMouseClicked
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        String cartao = JOptionPane.showInputDialog(
+                null,
+                "Qual tipo de cartao voce deseja?",
+                "Cartao",
+                JOptionPane.QUESTION_MESSAGE);
+
+        TipoCartao tipoCartao;
+
+        try {
+            if (!(cartao.isEmpty())) {
+                if (cartao.toUpperCase().equals("CREDITO") || cartao.toUpperCase().equals("CRÉDITO") ) {
+                    tipoCartao = TipoCartao.CREDITO;
+                    try {
+                        Cartao c = new Cartao(contaLogada.getCliente(), tipoCartao);
+                        Crud.add(c);
+                        JOptionPane.showMessageDialog(null, "Cartao criado com sucesso", "Erro", JOptionPane.PLAIN_MESSAGE);
+                        System.out.println(Crud.cartoes());
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null, ex.getMessage(), "Erro", JOptionPane.PLAIN_MESSAGE);
+                    }
+                } else if (cartao.toUpperCase().equals("DEBITO") || cartao.toUpperCase().equals("DÉBITO")) {
+                    tipoCartao = TipoCartao.DEBITO;
+                    try {
+                        Cartao c = new Cartao(contaLogada.getCliente(), tipoCartao);
+                        Crud.add(c);
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null, ex.getMessage(), "Erro", JOptionPane.PLAIN_MESSAGE);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Informe se voce deseja um cartao de CREDITO ou DEBITO", "Erro", JOptionPane.PLAIN_MESSAGE);
+                }
+            }
+        } catch (Exception ex) {
+
+        }
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         JOptionPane.showMessageDialog(null, contaLogada.getCliente().toString() + "Senha da conta: " +
                 contaLogada.getSenha(), "Dados do cliente", JOptionPane.PLAIN_MESSAGE);
-    }//GEN-LAST:event_informacoesDoClienteLabelMouseClicked
+    }//GEN-LAST:event_jButton14ActionPerformed
 
-    private void saldoLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saldoLabelMouseClicked
-        JOptionPane.showMessageDialog(null, contaLogada.getExtrato().toString(), "Extrato da conta", JOptionPane.PLAIN_MESSAGE);
-    }//GEN-LAST:event_saldoLabelMouseClicked
+    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+       JOptionPane.showMessageDialog(null, contaLogada.getExtrato().toString(), "Extrato da conta", JOptionPane.PLAIN_MESSAGE);
+    }//GEN-LAST:event_jButton23ActionPerformed
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        TelaLogin tela = new TelaLogin();
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+       TelaLogin tela = new TelaLogin();
         tela.setVisible(true);
         tela.setLocationRelativeTo(null);
         this.dispose();
 
         contaLogada = null;
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_jButton18ActionPerformed
 
-    private void pixButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pixButtonActionPerformed
-        String valorPIX = JOptionPane.showInputDialog(
-                null,
-                "Digite quanto voce deseja sacar:",
-                "PIX",
-                JOptionPane.QUESTION_MESSAGE
-        );
-
-        String numeroConta = JOptionPane.showInputDialog(
-                null,
-                "Digite o numero da conta de destino:",
-                "PIX",
-                JOptionPane.QUESTION_MESSAGE
-        );
-
-        try {
-            if (valorPIX.matches("-?[0-9]*(\\.[0-9]+)?")) {
-                contaLogada.realizarPix(Double.parseDouble(valorPIX), Crud.buscarConta(numeroConta));
-                valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
-                JOptionPane.showMessageDialog(null, "Transacao feita com sucesso", "PIX", JOptionPane.PLAIN_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(null, "Informe apenas numeros", "Erro", JOptionPane.PLAIN_MESSAGE);
-            }
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage(), "Erro", JOptionPane.PLAIN_MESSAGE);
-        }
-
-    }//GEN-LAST:event_pixButtonActionPerformed
-
-    private void saqueLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saqueLabelMouseClicked
-        JOptionPane.showMessageDialog(null, "Limite de saque da conta: R$" + contaLogada.getLimiteSaque(), "Limite conta", JOptionPane.PLAIN_MESSAGE);
-    }//GEN-LAST:event_saqueLabelMouseClicked
-
-    private void pixLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pixLabelMouseClicked
-        JOptionPane.showMessageDialog(null, "Limite de Pix da conta: R$" + contaLogada.getLimitePix(), "Limite conta", JOptionPane.PLAIN_MESSAGE);
-    }//GEN-LAST:event_pixLabelMouseClicked
-
-    private void saqueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saqueButtonActionPerformed
-        String valorSaque = JOptionPane.showInputDialog(
-                null,
-                "Digite quanto deseja sacar:",
-                "Saque",
-                JOptionPane.QUESTION_MESSAGE
-        );
-
-        try {
-            if (valorSaque.matches("-?[0-9]*(\\.[0-9]+)?")) {
-
-                if (Double.parseDouble(valorSaque) > contaLogada.getLimiteSaque()) {
-                    String perguntaCor = JOptionPane.showInputDialog(
-                            null,
-                            "Qual a sua cor favorita?",
-                            "Perguntas de seguranca!",
-                            JOptionPane.QUESTION_MESSAGE);
-                    String perguntaAnimal = JOptionPane.showInputDialog(
-                            null,
-                            "Qual o seu animal favorito?",
-                            "Perguntas de seguranca!",
-                            JOptionPane.QUESTION_MESSAGE);
-                    String perguntaComida = JOptionPane.showInputDialog(
-                            null,
-                            "Qual a sua comida favorita?",
-                            "Perguntas de seguranca!",
-                            JOptionPane.QUESTION_MESSAGE);
-
-                    if (contaLogada.perguntaSeguranca(perguntaCor, perguntaAnimal, perguntaComida)) {
-                        contaLogada.realizarSaque(Double.parseDouble(valorSaque));
-                        valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
-                        JOptionPane.showMessageDialog(null, "Transacao feita com sucesso", "Saque", JOptionPane.PLAIN_MESSAGE);
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Alguma das perguntas estava errada. Saque negado", "Erro", JOptionPane.PLAIN_MESSAGE);
-                    }
-                } else {
-                    contaLogada.realizarSaque(Double.parseDouble(valorSaque));
-                    valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
-                    JOptionPane.showMessageDialog(null, "Transacao feita com sucesso", "Saque", JOptionPane.PLAIN_MESSAGE);
-                }
-            } else {
-                JOptionPane.showMessageDialog(null, "Informe apenas numeros", "Erro", JOptionPane.PLAIN_MESSAGE);
-            }
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage());
-        }
-    }//GEN-LAST:event_saqueButtonActionPerformed
-
-    private void depositoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_depositoButtonActionPerformed
-        String valorDeposito = JOptionPane.showInputDialog(
-                null,
-                "Digite quanto deseja depositar:",
-                "Deposito",
-                JOptionPane.QUESTION_MESSAGE);
-
-        try {
-            if (valorDeposito.matches("-?[0-9]*(\\.[0-9]+)?")) {
-                contaLogada.realizarDeposito(Double.parseDouble(valorDeposito));
-                valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
-                JOptionPane.showMessageDialog(null, "Transacao feita com sucesso", "Deposito", JOptionPane.PLAIN_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(null, "Digite apenas numeros", "Erro", JOptionPane.PLAIN_MESSAGE);
-            }
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage());
-        }
-    }//GEN-LAST:event_depositoButtonActionPerformed
-
-    private void emprestimoLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emprestimoLabelMouseClicked
+    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
         JOptionPane.showMessageDialog(null, Crud.matchEmprestimo(contaLogada.getCliente()), "Emprestimos", JOptionPane.PLAIN_MESSAGE);
-    }//GEN-LAST:event_emprestimoLabelMouseClicked
+    }//GEN-LAST:event_jButton24ActionPerformed
 
-    private void boletoLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boletoLabelMouseClicked
-        JOptionPane.showMessageDialog(null, Crud.boletos(), "Boletos", JOptionPane.PLAIN_MESSAGE);
-    }//GEN-LAST:event_boletoLabelMouseClicked
-
-    private void creditoEspecialLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_creditoEspecialLabelMouseClicked
-        JOptionPane.showMessageDialog(null, "Valor do seu credito especial: RS" + contaLogada.getLimiteCreditoEspecial(), "Credito especial", JOptionPane.PLAIN_MESSAGE);
-    }//GEN-LAST:event_creditoEspecialLabelMouseClicked
-
-    private void emprestimoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emprestimoButtonActionPerformed
-        String valorEmprestimo = JOptionPane.showInputDialog(
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+         String valorEmprestimo = JOptionPane.showInputDialog(
                 null,
                 "Digite o valor que voce deseja pegar emprestado",
                 "Emprestimo",
@@ -645,27 +596,28 @@ public class TelaPrincipal extends javax.swing.JFrame {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-    }//GEN-LAST:event_emprestimoButtonActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void boletoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boletoButtonActionPerformed
-        String codigoBoleto = JOptionPane.showInputDialog(
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+         String codigoEmprestimo = JOptionPane.showInputDialog(
                 null,
-                "Digite codigo do boleto",
-                "Boleto",
+                "Digite codigo do emprestimo",
+                "Emprestimo",
                 JOptionPane.QUESTION_MESSAGE);
+
         try {
-            if (codigoBoleto.matches("-?[0-9]*(\\.[0-9]+)?")) {
-                if (Crud.buscarBoleto(codigoBoleto) != null) {
+            if (codigoEmprestimo.matches("-?[0-9]*(\\.[0-9]+)?")) {
+                Emprestimo emprestimo = Crud.buscarEmprestimo(codigoEmprestimo);
+                if (emprestimo != null) {
                     try {
-                        contaLogada.pagarBoleto(Crud.buscarBoleto(codigoBoleto));
+                        emprestimo.pagarParcelaEmprestimo(contaLogada);
                         valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
-                        JOptionPane.showMessageDialog(null, "Pagamento realizado com sucesso", "Boleto", JOptionPane.PLAIN_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Pagamento realizado com sucesso", "Emprestimo", JOptionPane.PLAIN_MESSAGE);
                     } catch (Exception ex) {
                         JOptionPane.showMessageDialog(null, ex.getMessage(), "Erro", JOptionPane.PLAIN_MESSAGE);
                     }
-
                 } else {
-                    JOptionPane.showMessageDialog(null, "Esse boleto nao existe", "Erro", JOptionPane.PLAIN_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Nao foi possivel encontrar esse emprestimo", "Erro", JOptionPane.PLAIN_MESSAGE);
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Digite apenas numeros", "Erro", JOptionPane.PLAIN_MESSAGE);
@@ -673,18 +625,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-    }//GEN-LAST:event_boletoButtonActionPerformed
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void creditoEspecialButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creditoEspecialButtonActionPerformed
-        try {
-            contaLogada.creditoEspecial();
-            valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage());
-        }
-    }//GEN-LAST:event_creditoEspecialButtonActionPerformed
-
-    private void financiamentoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_financiamentoButtonActionPerformed
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         String valorFinanciamento = JOptionPane.showInputDialog(
                 null,
                 "Digite o valor que voce deseja pegar emprestado",
@@ -718,13 +661,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-    }//GEN-LAST:event_financiamentoButtonActionPerformed
+    }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void financiamentoLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_financiamentoLabelMouseClicked
-        JOptionPane.showMessageDialog(null, Crud.matchFinanciamento(contaLogada.getCliente()), "Financiamentos", JOptionPane.PLAIN_MESSAGE);
-    }//GEN-LAST:event_financiamentoLabelMouseClicked
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+       JOptionPane.showMessageDialog(null, Crud.matchFinanciamento(contaLogada.getCliente()), "Financiamentos", JOptionPane.PLAIN_MESSAGE);
+    }//GEN-LAST:event_jButton20ActionPerformed
 
-    private void pagarFinanciamentoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagarFinanciamentoButtonActionPerformed
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         String codigoFinanciamento = JOptionPane.showInputDialog(
                 null,
                 "Digite codigo do financiamento",
@@ -750,83 +693,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-    }//GEN-LAST:event_pagarFinanciamentoButtonActionPerformed
+    }//GEN-LAST:event_jButton19ActionPerformed
 
-    private void pagarEmprestimoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagarEmprestimoButtonActionPerformed
-
-        String codigoEmprestimo = JOptionPane.showInputDialog(
-                null,
-                "Digite codigo do emprestimo",
-                "Emprestimo",
-                JOptionPane.QUESTION_MESSAGE);
-
-        try {
-            if (codigoEmprestimo.matches("-?[0-9]*(\\.[0-9]+)?")) {
-                Emprestimo emprestimo = Crud.buscarEmprestimo(codigoEmprestimo);
-                if (emprestimo != null) {
-                    try {
-                        emprestimo.pagarParcelaEmprestimo(contaLogada);
-                        valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
-                        JOptionPane.showMessageDialog(null, "Pagamento realizado com sucesso", "Emprestimo", JOptionPane.PLAIN_MESSAGE);
-                    } catch (Exception ex) {
-                        JOptionPane.showMessageDialog(null, ex.getMessage(), "Erro", JOptionPane.PLAIN_MESSAGE);
-                    }
-                } else {
-                    JOptionPane.showMessageDialog(null, "Nao foi possivel encontrar esse emprestimo", "Erro", JOptionPane.PLAIN_MESSAGE);
-                }
-            } else {
-                JOptionPane.showMessageDialog(null, "Digite apenas numeros", "Erro", JOptionPane.PLAIN_MESSAGE);
-            }
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }
-
-    }//GEN-LAST:event_pagarEmprestimoButtonActionPerformed
-
-    private void cartaoLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartaoLabelMouseClicked
-        JOptionPane.showMessageDialog(null, Crud.matchCartoes(contaLogada.getCliente()), "Cartoes", JOptionPane.PLAIN_MESSAGE);
-    }//GEN-LAST:event_cartaoLabelMouseClicked
-
-    private void cartaoButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartaoButton1ActionPerformed
-        String cartao = JOptionPane.showInputDialog(
-                null,
-                "Qual tipo de cartao voce deseja?",
-                "Cartao",
-                JOptionPane.QUESTION_MESSAGE);
-
-        TipoCartao tipoCartao;
-
-        try {
-            if (!(cartao.isEmpty())) {
-                if (cartao.toUpperCase().equals("CREDITO")) {
-                    tipoCartao = TipoCartao.CREDITO;
-                    try {
-                        Cartao c = new Cartao(contaLogada.getCliente(), tipoCartao);
-                        Crud.add(c);
-                        JOptionPane.showMessageDialog(null, "Cartao criado com sucesso", "Erro", JOptionPane.PLAIN_MESSAGE);
-                        System.out.println(Crud.cartoes());
-                    } catch (Exception ex) {
-                        JOptionPane.showMessageDialog(null, ex.getMessage(), "Erro", JOptionPane.PLAIN_MESSAGE);
-                    }
-                } else if (cartao.toUpperCase().equals("DEBITO")) {
-                    tipoCartao = TipoCartao.DEBITO;
-                    try {
-                        Cartao c = new Cartao(contaLogada.getCliente(), tipoCartao);
-                        Crud.add(c);
-                    } catch (Exception ex) {
-                        JOptionPane.showMessageDialog(null, ex.getMessage(), "Erro", JOptionPane.PLAIN_MESSAGE);
-                    }
-                } else {
-                    JOptionPane.showMessageDialog(null, "Informe se voce deseja um cartao de CREDITO ou DEBITO", "Erro", JOptionPane.PLAIN_MESSAGE);
-                }
-            }
-        } catch (Exception ex) {
-
-        }
-    }//GEN-LAST:event_cartaoButton1ActionPerformed
-
-    private void cartaoButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartaoButton2ActionPerformed
-        String numeroCartao = JOptionPane.showInputDialog(
+    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+       String numeroCartao = JOptionPane.showInputDialog(
                 null,
                 "Digite numero do cartao pagar",
                 "Cartao",
@@ -853,10 +723,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
+    }//GEN-LAST:event_jButton21ActionPerformed
 
-    }//GEN-LAST:event_cartaoButton2ActionPerformed
-
-    private void cartaoButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartaoButton3ActionPerformed
+    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
         String numeroCartao = JOptionPane.showInputDialog(
                 null,
                 "Digite numero do cartao que voce deseja utilizar",
@@ -912,11 +781,155 @@ public class TelaPrincipal extends javax.swing.JFrame {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
+    }//GEN-LAST:event_jButton22ActionPerformed
 
-    }//GEN-LAST:event_cartaoButton3ActionPerformed
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+         try {
+            contaLogada.creditoEspecial();
+            valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void senhaLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_senhaLabelMouseClicked
-        String senhaAtual = JOptionPane.showInputDialog(
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        JOptionPane.showMessageDialog(null, "Valor do seu credito especial: RS" + contaLogada.getLimiteCreditoEspecial(), "Credito especial", JOptionPane.PLAIN_MESSAGE);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        String codigoBoleto = JOptionPane.showInputDialog(
+                null,
+                "Digite codigo do boleto",
+                "Boleto",
+                JOptionPane.QUESTION_MESSAGE);
+        try {
+            if (codigoBoleto.matches("-?[0-9]*(\\.[0-9]+)?")) {
+                if (Crud.buscarBoleto(codigoBoleto) != null) {
+                    try {
+                        contaLogada.pagarBoleto(Crud.buscarBoleto(codigoBoleto));
+                        valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
+                        JOptionPane.showMessageDialog(null, "Pagamento realizado com sucesso", "Boleto", JOptionPane.PLAIN_MESSAGE);
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null, ex.getMessage(), "Erro", JOptionPane.PLAIN_MESSAGE);
+                    }
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Esse boleto nao existe", "Erro", JOptionPane.PLAIN_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Digite apenas numeros", "Erro", JOptionPane.PLAIN_MESSAGE);
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        String valorDeposito = JOptionPane.showInputDialog(
+                null,
+                "Digite quanto deseja depositar:",
+                "Deposito",
+                JOptionPane.QUESTION_MESSAGE);
+
+        try {
+            if (valorDeposito.matches("-?[0-9]*(\\.[0-9]+)?")) {
+                contaLogada.realizarDeposito(Double.parseDouble(valorDeposito));
+                valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
+                JOptionPane.showMessageDialog(null, "Transacao feita com sucesso", "Deposito", JOptionPane.PLAIN_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Digite apenas numeros", "Erro", JOptionPane.PLAIN_MESSAGE);
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        String valorSaque = JOptionPane.showInputDialog(
+                null,
+                "Digite quanto deseja sacar:",
+                "Saque",
+                JOptionPane.QUESTION_MESSAGE
+        );
+
+        try {
+            if (valorSaque.matches("-?[0-9]*(\\.[0-9]+)?")) {
+
+                if (Double.parseDouble(valorSaque) > contaLogada.getLimiteSaque()) {
+                    String perguntaCor = JOptionPane.showInputDialog(
+                            null,
+                            "Qual a sua cor favorita?",
+                            "Perguntas de seguranca!",
+                            JOptionPane.QUESTION_MESSAGE);
+                    String perguntaAnimal = JOptionPane.showInputDialog(
+                            null,
+                            "Qual o seu animal favorito?",
+                            "Perguntas de seguranca!",
+                            JOptionPane.QUESTION_MESSAGE);
+                    String perguntaComida = JOptionPane.showInputDialog(
+                            null,
+                            "Qual a sua comida favorita?",
+                            "Perguntas de seguranca!",
+                            JOptionPane.QUESTION_MESSAGE);
+
+                    if (contaLogada.perguntaSeguranca(perguntaCor, perguntaAnimal, perguntaComida)) {
+                        contaLogada.realizarSaque(Double.parseDouble(valorSaque));
+                        valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
+                        JOptionPane.showMessageDialog(null, "Transacao feita com sucesso", "Saque", JOptionPane.PLAIN_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Alguma das perguntas estava errada. Saque negado", "Erro", JOptionPane.PLAIN_MESSAGE);
+                    }
+                } else {
+                    contaLogada.realizarSaque(Double.parseDouble(valorSaque));
+                    valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
+                    JOptionPane.showMessageDialog(null, "Transacao feita com sucesso", "Saque", JOptionPane.PLAIN_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Informe apenas numeros", "Erro", JOptionPane.PLAIN_MESSAGE);
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+       JOptionPane.showMessageDialog(null, "Limite de saque da conta: R$" + contaLogada.getLimiteSaque(), "Limite conta", JOptionPane.PLAIN_MESSAGE);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        JOptionPane.showMessageDialog(null, "Limite de Pix da conta: R$" + contaLogada.getLimitePix(), "Limite conta", JOptionPane.PLAIN_MESSAGE);
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+       String valorPIX = JOptionPane.showInputDialog(
+                null,
+                "Digite quanto voce deseja sacar:",
+                "PIX",
+                JOptionPane.QUESTION_MESSAGE
+        );
+
+        String numeroConta = JOptionPane.showInputDialog(
+                null,
+                "Digite o numero da conta de destino:",
+                "PIX",
+                JOptionPane.QUESTION_MESSAGE
+        );
+
+        try {
+            if (valorPIX.matches("-?[0-9]*(\\.[0-9]+)?")) {
+                contaLogada.realizarPix(Double.parseDouble(valorPIX), Crud.buscarConta(numeroConta));
+                valorTextField.setText("R$ " + String.valueOf(contaLogada.getSaldo()));
+                JOptionPane.showMessageDialog(null, "Transacao feita com sucesso", "PIX", JOptionPane.PLAIN_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Informe apenas numeros", "Erro", JOptionPane.PLAIN_MESSAGE);
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "Erro", JOptionPane.PLAIN_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+       String senhaAtual = JOptionPane.showInputDialog(
                 null,
                 "Digite a sua senha atual",
                 "Mudar senha",
@@ -949,10 +962,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-    }//GEN-LAST:event_senhaLabelMouseClicked
+    }//GEN-LAST:event_jButton9ActionPerformed
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        String senha = JOptionPane.showInputDialog(
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+         String senha = JOptionPane.showInputDialog(
                 null,
                 "Digite sua senhapoder confirmar:",
                 "EXCLUIR CONTA",
@@ -974,8 +987,94 @@ public class TelaPrincipal extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "A sua senha esta errada", "Erro", JOptionPane.PLAIN_MESSAGE);
         }
+    }//GEN-LAST:event_jButton10ActionPerformed
 
+    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton25ActionPerformed
 
-    }//GEN-LAST:event_jLabel1MouseClicked
-    // End of variables declaration                   
+    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+        JOptionPane.showMessageDialog(null, Crud.matchCartoes(contaLogada.getCliente()), "Cartoes", JOptionPane.PLAIN_MESSAGE);
+    }//GEN-LAST:event_jButton26ActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new TelaPrincipal().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
+    private javax.swing.JButton jButton20;
+    private javax.swing.JButton jButton21;
+    private javax.swing.JButton jButton22;
+    private javax.swing.JButton jButton23;
+    private javax.swing.JButton jButton24;
+    private javax.swing.JButton jButton25;
+    private javax.swing.JButton jButton26;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel valorTextField;
+    // End of variables declaration//GEN-END:variables
 }

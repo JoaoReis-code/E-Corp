@@ -22,7 +22,7 @@ public class Cliente {
         if (!validarCpf(cpf)) {
             throw new ValidacaoException("Formato de Cpf incorreto. Informe apenas os numeros.");
         } else if (!validarIdade(dataNascimeto)) {
-            throw new ValidacaoException("Apenas com mais de 18 anos e 1 dia podem ser clientes.");
+            throw new ValidacaoException("Apenas com mais de 18 anos e 1 dia e menos de 150 anos podem ser clientes.");
         } else if (!validarEmail(email)) {
             throw new ValidacaoException("Insira um email valido.");
         } else if (!validaRendaMensal(rendaMensal)) {
@@ -39,9 +39,9 @@ public class Cliente {
 
     public static boolean validarIdade(LocalDate dataFornecida) {
         LocalDate dataAtual = LocalDate.now().minusYears(18);
-        return dataAtual.isAfter(dataFornecida);
+        LocalDate dataAtual2 = LocalDate.now().minusYears(150);
+        return (dataAtual.isAfter(dataFornecida) && dataAtual2.isBefore(dataFornecida));
     }
-<<<<<<< HEAD
 
     public static boolean validarCpf(String cpf) {
         return ((cpf.length() == 11) && (cpf.matches("[0-9]*")));
@@ -51,14 +51,6 @@ public class Cliente {
         return (email.indexOf('@') > 0);
     }
 
-=======
-    public static boolean validarCpf(String cpf) {
-        return ((cpf.length() == 11) && (cpf.matches("[0-9]*")));
-    }
-    public static boolean validarEmail(String email) {
-        return (email.indexOf('@') > 0);
-    }
->>>>>>> d7cca2f838a493a8092535a46097eec0b5b4f41e
     public static boolean validaRendaMensal(double rendaMensal) {
         return (rendaMensal > 0);
     }
