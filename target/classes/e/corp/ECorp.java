@@ -66,8 +66,6 @@ public class ECorp {
         Crud.add(c2);
         Crud.add(conta2);
 
-        System.out.println(Crud.contas());
-
         Boleto boleto1 = new Boleto(LocalDate.of(2024, 12, 2), 1000);
         Boleto boleto2 = new Boleto(LocalDate.of(2020, 12, 2), 200);
         Boleto boleto3 = new Boleto(LocalDate.of(2024, 12, 2), 122);
@@ -79,7 +77,6 @@ public class ECorp {
         Crud.add(boleto3);
         Crud.add(boleto4);
         Crud.add(boleto5);
-        System.out.println(Crud.boletos());
 
     }
 }
